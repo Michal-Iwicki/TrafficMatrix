@@ -1,0 +1,42 @@
+Przesyłam 3 pliki dla Zielonej Góry i jeden dla Warszawy, dane z 17.11.2024 z godz. 17
+
+Dane w plikach:
+
+vehicle_id - unikalny vehicle ID
+timestamp - Epoch/Unix time
+time - data i godzina
+speed - prędkość
+course - kierunek jazdy (azymut), którego punktem odniesienia jest północ geograficzna. Wartość 0 oznacza, że poruszamy się na północ, 90 na wschód itd.
+lat - szerokość geograficzna
+lon - długość geograficzna
+Jeżeli chodzi o Zieloną Górą do było zapytanie z zaprzyjaźnionego w ZG Urzędu Miasta , czy z danych GPS da się pomierzyć
+
+Czasy przejazdu odcinkami w dn.:
+
+a) 26.04.2023 r. w godz. 6:00 – 22:00
+
+b) 10.05.2023 r. w godz. 6:00 – 22:00
+
+c) 24.04.2024 r. w godz. 6:00 – 22:00
+
+ 
+
+na następującym odcinku (ciągu ul. Długiej/Konstytucji 3-go Maja/Wrocławskiej):
+
+od ul. Dąbrówki (przed skrzyżowaniem z Łużycką))
+
+do ul. Wrocławskiej (przed Lwowską)
+
+ 
+
+w podziale na odcinki miedzy skrzyżowaniami tj.:
+
+- między Łużycką a 1-go Maja
+
+- między 1-go Maja a Moniuszki
+
+- Moniuszki a Sikorskiego (DW 283)
+
+- Sikorskiego (DW 283) a Wrocławskiej
+
+- Wrocławskiej a Lwowskiej (do punktu 17 na czerwono)
