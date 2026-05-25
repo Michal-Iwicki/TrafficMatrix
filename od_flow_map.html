@@ -1,0 +1,2362 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_57b27d39a5f05cbba31e27e50766dfaa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_57b27d39a5f05cbba31e27e50766dfaa" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_57b27d39a5f05cbba31e27e50766dfaa = L.map(
+                "map_57b27d39a5f05cbba31e27e50766dfaa",
+                {
+                    center: [52.27308763666617, 20.972775679293296],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 12,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_437116e11e03c97349ed5d1c883366b4 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_437116e11e03c97349ed5d1c883366b4.addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            var poly_line_7501470c8a4d11815de18cba5ad8ea2c = L.polyline(
+                [[52.2918147751606, 20.973781092077086], [52.269706851385386, 20.998854156171284]],
+                {"bubblingMouseEvents": true, "color": "#800026ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#800026ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 7.0}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_7501470c8a4d11815de18cba5ad8ea2c.bindTooltip(
+                `<div>
+                     cluster_10_near_Gwiaździsta_275m -> cluster_1_near_parking_234m<br>przejazdy: 109<br>mediana czasu: 2.5 min<br>sredni dystans: 3.1 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a36aef0ad86271a6aac63137d0d0bc28 = L.polyline(
+                [[52.269706851385386, 20.998854156171284], [52.2918147751606, 20.973781092077086]],
+                {"bubblingMouseEvents": true, "color": "#a0242bff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#a0242bff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 6.839459743470924}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_a36aef0ad86271a6aac63137d0d0bc28.bindTooltip(
+                `<div>
+                     cluster_1_near_parking_234m -> cluster_10_near_Gwiaździsta_275m<br>przejazdy: 96<br>mediana czasu: 2.3 min<br>sredni dystans: 3.1 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_aec572e1e3b33f771ae17b6a7520d3a8 = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#ef7c39ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ef7c39ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 6.328460427501746}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_aec572e1e3b33f771ae17b6a7520d3a8.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 64<br>mediana czasu: 14.8 min<br>sredni dystans: 20.0 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_4e3607a446c8ff86b782e4790b6946b1 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.30764633173843, 21.095601515151515]],
+                {"bubblingMouseEvents": true, "color": "#fd8d3cff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fd8d3cff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 6.204834986968384}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_4e3607a446c8ff86b782e4790b6946b1.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_5_near_Marki_299m<br>przejazdy: 58<br>mediana czasu: 12.4 min<br>sredni dystans: 19.6 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_958b52aca130194e221640c4adf70bcc = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.255465703517594, 20.952587412060304]],
+                {"bubblingMouseEvents": true, "color": "#fe9f52ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fe9f52ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 6.018838918683355}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_958b52aca130194e221640c4adf70bcc.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_0_near_motorway_junction_71m<br>przejazdy: 50<br>mediana czasu: 10.2 min<br>sredni dystans: 12.8 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_63c848cf16a319201662d062c76fcb56 = L.polyline(
+                [[52.255465703517594, 20.952587412060304], [52.30764633173843, 21.095601515151515]],
+                {"bubblingMouseEvents": true, "color": "#feac63ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#feac63ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 5.85907251200091}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_63c848cf16a319201662d062c76fcb56.bindTooltip(
+                `<div>
+                     cluster_0_near_motorway_junction_71m -> cluster_5_near_Marki_299m<br>przejazdy: 44<br>mediana czasu: 8.5 min<br>sredni dystans: 12.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fe26dd40aa663943c38fa55e359117f2 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.2918147751606, 20.973781092077086]],
+                {"bubblingMouseEvents": true, "color": "#feb872ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#feb872ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 5.708726556068136}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_fe26dd40aa663943c38fa55e359117f2.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_10_near_Gwiaździsta_275m<br>przejazdy: 39<br>mediana czasu: 9.7 min<br>sredni dystans: 13.6 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6c38ed8ce3ed2a27363516619c3b467c = L.polyline(
+                [[52.2805872027972, 21.010719510489512], [52.30370796, 20.988933959999997]],
+                {"bubblingMouseEvents": true, "color": "#febe7aff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#febe7aff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 5.609211354978808}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_6c38ed8ce3ed2a27363516619c3b467c.bindTooltip(
+                `<div>
+                     cluster_14_near_Orlen_378m -> cluster_27_near_BP_96m<br>przejazdy: 36<br>mediana czasu: 3.3 min<br>sredni dystans: 3.3 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3f4376f597485f3ee5a79048bc624da1 = L.polyline(
+                [[52.255465703517594, 20.952587412060304], [52.2918147751606, 20.973781092077086]],
+                {"bubblingMouseEvents": true, "color": "#fec17dff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fec17dff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 5.574237515639949}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_3f4376f597485f3ee5a79048bc624da1.bindTooltip(
+                `<div>
+                     cluster_0_near_motorway_junction_71m -> cluster_10_near_Gwiaździsta_275m<br>przejazdy: 35<br>mediana czasu: 5.5 min<br>sredni dystans: 6.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8f4d91bcbbbc71b452793cdb2a9d1328 = L.polyline(
+                [[52.2918147751606, 20.973781092077086], [52.255465703517594, 20.952587412060304]],
+                {"bubblingMouseEvents": true, "color": "#ffca88ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffca88ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 5.423891559707173}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_8f4d91bcbbbc71b452793cdb2a9d1328.bindTooltip(
+                `<div>
+                     cluster_10_near_Gwiaździsta_275m -> cluster_0_near_motorway_junction_71m<br>przejazdy: 31<br>mediana czasu: 5.7 min<br>sredni dystans: 5.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_8e39daee3f60215505fa77cddd2c8a72 = L.polyline(
+                [[52.255465703517594, 20.952587412060304], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#ffca88ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffca88ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 5.423891559707173}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_8e39daee3f60215505fa77cddd2c8a72.bindTooltip(
+                `<div>
+                     cluster_0_near_motorway_junction_71m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 31<br>mediana czasu: 5.8 min<br>sredni dystans: 8.2 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_67f2dc49e77a4837f7aadd1a2b1622d8 = L.polyline(
+                [[52.30370796, 20.988933959999997], [52.2805872027972, 21.010719510489512]],
+                {"bubblingMouseEvents": true, "color": "#ffcc8bff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffcc8bff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 5.383365448530584}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_67f2dc49e77a4837f7aadd1a2b1622d8.bindTooltip(
+                `<div>
+                     cluster_27_near_BP_96m -> cluster_14_near_Orlen_378m<br>przejazdy: 30<br>mediana czasu: 3.3 min<br>sredni dystans: 3.1 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_80e555511d5454c7eb78a5aa4eb00657 = L.polyline(
+                [[52.2918147751606, 20.973781092077086], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#ffd799ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffd799ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 5.158847119199349}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_80e555511d5454c7eb78a5aa4eb00657.bindTooltip(
+                `<div>
+                     cluster_10_near_Gwiaździsta_275m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 25<br>mediana czasu: 10.2 min<br>sredni dystans: 13.0 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_bc7d7bbf7d80d36b4d0ab3a0fd6fc675 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.255465703517594, 20.952587412060304]],
+                {"bubblingMouseEvents": true, "color": "#ffdea2ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffdea2ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 5.002349511442619}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_bc7d7bbf7d80d36b4d0ab3a0fd6fc675.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_0_near_motorway_junction_71m<br>przejazdy: 22<br>mediana czasu: 5.7 min<br>sredni dystans: 8.0 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_fa54ddb766748ff10bb5d17a93dd2348 = L.polyline(
+                [[52.30370796, 20.988933959999997], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#ffe0a5ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffe0a5ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.945608379756168}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_fa54ddb766748ff10bb5d17a93dd2348.bindTooltip(
+                `<div>
+                     cluster_27_near_BP_96m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 21<br>mediana czasu: 12.7 min<br>sredni dystans: 14.6 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a75361d4fff054d57ae4ce4a6bd74814 = L.polyline(
+                [[52.255465703517594, 20.952587412060304], [52.30370796, 20.988933959999997]],
+                {"bubblingMouseEvents": true, "color": "#ffe0a5ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffe0a5ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.945608379756168}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_a75361d4fff054d57ae4ce4a6bd74814.bindTooltip(
+                `<div>
+                     cluster_0_near_motorway_junction_71m -> cluster_27_near_BP_96m<br>przejazdy: 21<br>mediana czasu: 7.1 min<br>sredni dystans: 7.4 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2efc0b3945ffeda83e8d8937108f1daa = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.30370796, 20.988933959999997]],
+                {"bubblingMouseEvents": true, "color": "#ffe7adff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffe7adff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.758474134594191}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_2efc0b3945ffeda83e8d8937108f1daa.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_27_near_BP_96m<br>przejazdy: 18<br>mediana czasu: 11.3 min<br>sredni dystans: 14.9 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c39be8030f2a5c4047f467bb0277a6b6 = L.polyline(
+                [[52.30370796, 20.988933959999997], [52.255465703517594, 20.952587412060304]],
+                {"bubblingMouseEvents": true, "color": "#ffe7adff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffe7adff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.758474134594191}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_c39be8030f2a5c4047f467bb0277a6b6.bindTooltip(
+                `<div>
+                     cluster_27_near_BP_96m -> cluster_0_near_motorway_junction_71m<br>przejazdy: 18<br>mediana czasu: 8.3 min<br>sredni dystans: 7.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e85ad37e64b3c9402be8af28f925a928 = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.269706851385386, 20.998854156171284]],
+                {"bubblingMouseEvents": true, "color": "#ffe7adff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffe7adff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.758474134594191}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_e85ad37e64b3c9402be8af28f925a928.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_1_near_parking_234m<br>przejazdy: 18<br>mediana czasu: 8.3 min<br>sredni dystans: 10.0 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_5bc74699b5ca4fcc683e35d4a4236383 = L.polyline(
+                [[52.269706851385386, 20.998854156171284], [52.30764633173843, 21.095601515151515]],
+                {"bubblingMouseEvents": true, "color": "#ffe9b0ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffe9b0ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.689459203698513}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_5bc74699b5ca4fcc683e35d4a4236383.bindTooltip(
+                `<div>
+                     cluster_1_near_parking_234m -> cluster_5_near_Marki_299m<br>przejazdy: 17<br>mediana czasu: 6.7 min<br>sredni dystans: 9.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1aea0f6dd23e36103aacbbf238f6a9e8 = L.polyline(
+                [[52.297974070796464, 21.03151053097345], [52.30764633173843, 21.095601515151515]],
+                {"bubblingMouseEvents": true, "color": "#ffe9b0ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffe9b0ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.689459203698513}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_1aea0f6dd23e36103aacbbf238f6a9e8.bindTooltip(
+                `<div>
+                     cluster_3_near_Modlińska_248m -> cluster_5_near_Marki_299m<br>przejazdy: 17<br>mediana czasu: 4.5 min<br>sredni dystans: 4.9 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_94c26858288f046faa9bec22e3e8f3d4 = L.polyline(
+                [[52.269706851385386, 20.998854156171284], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#ffebb3ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffebb3ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.616498472804816}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_94c26858288f046faa9bec22e3e8f3d4.bindTooltip(
+                `<div>
+                     cluster_1_near_parking_234m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 16<br>mediana czasu: 11.8 min<br>sredni dystans: 13.9 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7717ab80cdbc77ef73af9b89e6faab7e = L.polyline(
+                [[52.27808819672131, 20.95902868852459], [52.27151309090909, 20.97344818181818]],
+                {"bubblingMouseEvents": true, "color": "#ffeeb6ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffeeb6ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.539113247765739}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_7717ab80cdbc77ef73af9b89e6faab7e.bindTooltip(
+                `<div>
+                     cluster_28_near_Carrefour Express_459m -> cluster_25_near_Marymoncka_468m<br>przejazdy: 15<br>mediana czasu: 2.5 min<br>sredni dystans: 1.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1ccc9cfb31b2d38515cfbc2e3e769926 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.25890859649123, 20.9617501754386]],
+                {"bubblingMouseEvents": true, "color": "#ffeeb6ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffeeb6ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.539113247765739}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_1ccc9cfb31b2d38515cfbc2e3e769926.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_4_near_Orlen_145m<br>przejazdy: 15<br>mediana czasu: 7.1 min<br>sredni dystans: 9.0 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6124e83377cc74af81dc121a46460150 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.239424375, 20.896751375]],
+                {"bubblingMouseEvents": true, "color": "#fff0b8ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff0b8ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.456732066122371}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_6124e83377cc74af81dc121a46460150.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_23_near_motorway_junction_474m<br>przejazdy: 14<br>mediana czasu: 3.7 min<br>sredni dystans: 3.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_682f0184ea913eb76ed19e8ce493b4a6 = L.polyline(
+                [[52.2918147751606, 20.973781092077086], [52.30764633173843, 21.095601515151515]],
+                {"bubblingMouseEvents": true, "color": "#fff4beff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff4beff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.274068807257914}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_682f0184ea913eb76ed19e8ce493b4a6.bindTooltip(
+                `<div>
+                     cluster_10_near_Gwiaździsta_275m -> cluster_5_near_Marki_299m<br>przejazdy: 12<br>mediana czasu: 6.6 min<br>sredni dystans: 9.4 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_eda4c1dd4631df49ab1bf8029b2d8ca4 = L.polyline(
+                [[52.30370796, 20.988933959999997], [52.269706851385386, 20.998854156171284]],
+                {"bubblingMouseEvents": true, "color": "#fff4beff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff4beff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.274068807257914}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_eda4c1dd4631df49ab1bf8029b2d8ca4.bindTooltip(
+                `<div>
+                     cluster_27_near_BP_96m -> cluster_1_near_parking_234m<br>przejazdy: 12<br>mediana czasu: 6.0 min<br>sredni dystans: 5.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_82fdfeb76e7e3c20520daf267ba33387 = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.2918147751606, 20.973781092077086]],
+                {"bubblingMouseEvents": true, "color": "#fff4beff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff4beff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.274068807257914}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_82fdfeb76e7e3c20520daf267ba33387.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_10_near_Gwiaździsta_275m<br>przejazdy: 12<br>mediana czasu: 7.4 min<br>sredni dystans: 9.3 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_248295cb8bf5de38e28e1400e602e276 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.269706851385386, 20.998854156171284]],
+                {"bubblingMouseEvents": true, "color": "#fff4beff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff4beff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.274068807257914}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_248295cb8bf5de38e28e1400e602e276.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_1_near_parking_234m<br>przejazdy: 12<br>mediana czasu: 10.8 min<br>sredni dystans: 13.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6714b74b3d6f9874c25e537df37fdfbc = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.23945882352941, 20.888491470588235]],
+                {"bubblingMouseEvents": true, "color": "#fff4beff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff4beff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.274068807257914}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_6714b74b3d6f9874c25e537df37fdfbc.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_38_near_Bemowo_282m<br>przejazdy: 12<br>mediana czasu: 2.2 min<br>sredni dystans: 2.9 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_2beefe7af1709e144b87b04b84a02243 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.297974070796464, 21.03151053097345]],
+                {"bubblingMouseEvents": true, "color": "#fff7c1ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff7c1ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.171897069761409}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_2beefe7af1709e144b87b04b84a02243.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_3_near_Modlińska_248m<br>przejazdy: 11<br>mediana czasu: 12.1 min<br>sredni dystans: 15.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_58a31852e152280ccb2ce92425da6733 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.26822366666667, 20.935143999999998]],
+                {"bubblingMouseEvents": true, "color": "#fff7c1ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff7c1ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.171897069761409}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_58a31852e152280ccb2ce92425da6733.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_43_near_BP_264m<br>przejazdy: 11<br>mediana czasu: 8.1 min<br>sredni dystans: 9.9 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_077f32fbf226517d3822f03eabe93e8a = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.24986696969697, 20.898053030303032]],
+                {"bubblingMouseEvents": true, "color": "#fff7c1ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff7c1ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.171897069761409}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_077f32fbf226517d3822f03eabe93e8a.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_33_near_parking_50m<br>przejazdy: 11<br>mediana czasu: 5.4 min<br>sredni dystans: 4.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_118847a411210ffd9bfe08ed5719028b = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.24326697674419, 20.89745581395349]],
+                {"bubblingMouseEvents": true, "color": "#fff7c1ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff7c1ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.171897069761409}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_118847a411210ffd9bfe08ed5719028b.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_11_near_motorway_junction_411m<br>przejazdy: 11<br>mediana czasu: 4.3 min<br>sredni dystans: 3.9 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_39e7c54f88fb25184368cc332c321c19 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.307148358208956, 21.080000746268656]],
+                {"bubblingMouseEvents": true, "color": "#fff7c1ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff7c1ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.171897069761409}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_39e7c54f88fb25184368cc332c321c19.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_17_near_Głębocka_595m<br>przejazdy: 11<br>mediana czasu: 11.8 min<br>sredni dystans: 18.8 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_eaceb7f29f5f0e2eb8cd9da383e6ad64 = L.polyline(
+                [[52.269706851385386, 20.998854156171284], [52.30370796, 20.988933959999997]],
+                {"bubblingMouseEvents": true, "color": "#fff9c4ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff9c4ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.060830067814733}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_eaceb7f29f5f0e2eb8cd9da383e6ad64.bindTooltip(
+                `<div>
+                     cluster_1_near_parking_234m -> cluster_27_near_BP_96m<br>przejazdy: 10<br>mediana czasu: 4.5 min<br>sredni dystans: 4.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6203263c4ebc03a1ebe8a58934a388e1 = L.polyline(
+                [[52.239424375, 20.896751375], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#fff9c4ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fff9c4ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 4.060830067814733}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_6203263c4ebc03a1ebe8a58934a388e1.bindTooltip(
+                `<div>
+                     cluster_23_near_motorway_junction_474m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 10<br>mediana czasu: 4.0 min<br>sredni dystans: 3.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_81faa162b4a63fa5fd0d88a217bc531a = L.polyline(
+                [[52.2699758974359, 20.952070256410256], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#fffbc7ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffbc7ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.939169932185267}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_81faa162b4a63fa5fd0d88a217bc531a.bindTooltip(
+                `<div>
+                     cluster_20_near_Megasam Żoliborski_168m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 9<br>mediana czasu: 8.0 min<br>sredni dystans: 9.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3827a70ae2b0eff408d21b5a3098db30 = L.polyline(
+                [[52.24628666666667, 20.911366296296297], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#fffbc7ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffbc7ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.939169932185267}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_3827a70ae2b0eff408d21b5a3098db30.bindTooltip(
+                `<div>
+                     cluster_21_near_Bemowo_526m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 9<br>mediana czasu: 7.0 min<br>sredni dystans: 5.1 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_5a92e12367af9ac1ecc24def70968246 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.24979444444444, 20.93688888888889]],
+                {"bubblingMouseEvents": true, "color": "#fffbc7ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffbc7ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.939169932185267}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_5a92e12367af9ac1ecc24def70968246.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> cluster_37_near_Lidl_203m<br>przejazdy: 9<br>mediana czasu: 4.3 min<br>sredni dystans: 6.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_740d4484aeafa5957b24b2c76bf42e56 = L.polyline(
+                [[52.255465703517594, 20.952587412060304], [52.26822366666667, 20.935143999999998]],
+                {"bubblingMouseEvents": true, "color": "#fffbc7ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffbc7ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.939169932185267}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_740d4484aeafa5957b24b2c76bf42e56.bindTooltip(
+                `<div>
+                     cluster_0_near_motorway_junction_71m -> cluster_43_near_BP_264m<br>przejazdy: 9<br>mediana czasu: 3.7 min<br>sredni dystans: 2.3 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e57f4a073963a61dbe76b37f25e2a8e3 = L.polyline(
+                [[52.297974070796464, 21.03151053097345], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#fffbc7ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffbc7ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.939169932185267}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_e57f4a073963a61dbe76b37f25e2a8e3.bindTooltip(
+                `<div>
+                     cluster_3_near_Modlińska_248m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 9<br>mediana czasu: 14.3 min<br>sredni dystans: 15.9 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_95d4827e8c2bd5c02c36eee06cbdfe8f = L.polyline(
+                [[52.27808819672131, 20.95902868852459], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#fffbc7ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffbc7ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.939169932185267}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_95d4827e8c2bd5c02c36eee06cbdfe8f.bindTooltip(
+                `<div>
+                     cluster_28_near_Carrefour Express_459m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 9<br>mediana czasu: 11.0 min<br>sredni dystans: 10.8 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_21626f24fec3c1883ab03e032dda9297 = L.polyline(
+                [[52.24326697674419, 20.89745581395349], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#fffbc7ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffbc7ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.939169932185267}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_21626f24fec3c1883ab03e032dda9297.bindTooltip(
+                `<div>
+                     cluster_11_near_motorway_junction_411m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 9<br>mediana czasu: 4.2 min<br>sredni dystans: 4.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d23ee297aeff6ad2b416b302d55cd976 = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.307148358208956, 21.080000746268656]],
+                {"bubblingMouseEvents": true, "color": "#fffbc7ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffbc7ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.939169932185267}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_d23ee297aeff6ad2b416b302d55cd976.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_17_near_Głębocka_595m<br>przejazdy: 9<br>mediana czasu: 0.8 min<br>sredni dystans: 1.2 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_d6c834968b55da49621d03ec99d3e49c = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.30370796, 20.988933959999997]],
+                {"bubblingMouseEvents": true, "color": "#fffbc7ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffbc7ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.939169932185267}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_d6c834968b55da49621d03ec99d3e49c.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_27_near_BP_96m<br>przejazdy: 9<br>mediana czasu: 7.2 min<br>sredni dystans: 8.5 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7ab8afe18a0325f5c7499b140ac149b1 = L.polyline(
+                [[52.242484081632654, 20.872746326530613], [52.239424375, 20.896751375]],
+                {"bubblingMouseEvents": true, "color": "#fffdc9ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffdc9ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.804680891757079}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_7ab8afe18a0325f5c7499b140ac149b1.bindTooltip(
+                `<div>
+                     cluster_16_near_Netto_492m -> cluster_23_near_motorway_junction_474m<br>przejazdy: 8<br>mediana czasu: 4.0 min<br>sredni dystans: 1.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e1890b34ae106d84d92948be7a8ac4fa = L.polyline(
+                [[52.242484081632654, 20.872746326530613], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#fffdc9ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffdc9ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.804680891757079}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_e1890b34ae106d84d92948be7a8ac4fa.bindTooltip(
+                `<div>
+                     cluster_16_near_Netto_492m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 8<br>mediana czasu: 4.3 min<br>sredni dystans: 4.1 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_1e79e961280811408bad9735fd3e064a = L.polyline(
+                [[52.2805872027972, 21.010719510489512], [52.30764633173843, 21.095601515151515]],
+                {"bubblingMouseEvents": true, "color": "#fffdc9ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffdc9ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.804680891757079}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_1e79e961280811408bad9735fd3e064a.bindTooltip(
+                `<div>
+                     cluster_14_near_Orlen_378m -> cluster_5_near_Marki_299m<br>przejazdy: 8<br>mediana czasu: 5.8 min<br>sredni dystans: 7.7 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_6cbf7f54c5816dceca8bdee35982b674 = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.297974070796464, 21.03151053097345]],
+                {"bubblingMouseEvents": true, "color": "#fffdc9ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffdc9ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.804680891757079}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_6cbf7f54c5816dceca8bdee35982b674.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_3_near_Modlińska_248m<br>przejazdy: 8<br>mediana czasu: 6.4 min<br>sredni dystans: 5.0 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_dda16226a106a5a99a13bdc68ac0ada4 = L.polyline(
+                [[52.21760287101248, 20.865222343966714], [52.274544375, 20.97215671875]],
+                {"bubblingMouseEvents": true, "color": "#fffdc9ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffdc9ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.804680891757079}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_dda16226a106a5a99a13bdc68ac0ada4.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m -> poi_OSM object<br>przejazdy: 8<br>mediana czasu: 8.3 min<br>sredni dystans: 9.4 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_81fb76f5036580e7a024db3464144cb4 = L.polyline(
+                [[52.30370796, 20.988933959999997], [52.30764633173843, 21.095601515151515]],
+                {"bubblingMouseEvents": true, "color": "#fffdc9ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffdc9ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.804680891757079}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_81fb76f5036580e7a024db3464144cb4.bindTooltip(
+                `<div>
+                     cluster_27_near_BP_96m -> cluster_5_near_Marki_299m<br>przejazdy: 8<br>mediana czasu: 7.6 min<br>sredni dystans: 8.8 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_c3519ce8199f04033564519ae90c0b7a = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.271567454545455, 20.96448509090909]],
+                {"bubblingMouseEvents": true, "color": "#fffdc9ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#fffdc9ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.804680891757079}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_c3519ce8199f04033564519ae90c0b7a.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_24_near_motorway_junction_68m<br>przejazdy: 8<br>mediana czasu: 6.8 min<br>sredni dystans: 10.1 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ef66544ec0fd241f3069504fa1803302 = L.polyline(
+                [[52.2659825, 20.944554444444446], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#ffffccff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffffccff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.654334935824304}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_ef66544ec0fd241f3069504fa1803302.bindTooltip(
+                `<div>
+                     cluster_19_near_Megasam Żoliborski_515m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 7<br>mediana czasu: 7.5 min<br>sredni dystans: 9.1 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_a1d5ec968bb8af625bea2e31bf330f52 = L.polyline(
+                [[52.30488875, 21.0546096875], [52.30764633173843, 21.095601515151515]],
+                {"bubblingMouseEvents": true, "color": "#ffffccff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffffccff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.654334935824304}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_a1d5ec968bb8af625bea2e31bf330f52.bindTooltip(
+                `<div>
+                     cluster_2_near_Głębocka_474m -> cluster_5_near_Marki_299m<br>przejazdy: 7<br>mediana czasu: 2.7 min<br>sredni dystans: 2.9 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_3a28bbb9828fefead68b8f16419a671e = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.3041015, 21.009051166666666]],
+                {"bubblingMouseEvents": true, "color": "#ffffccff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffffccff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.654334935824304}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_3a28bbb9828fefead68b8f16419a671e.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_29_near_parking_207m<br>przejazdy: 7<br>mediana czasu: 5.5 min<br>sredni dystans: 6.9 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_e49b5f3afc2b86215f212a0dac1a375e = L.polyline(
+                [[52.2918147751606, 20.973781092077086], [52.239424375, 20.896751375]],
+                {"bubblingMouseEvents": true, "color": "#ffffccff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffffccff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.654334935824304}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_e49b5f3afc2b86215f212a0dac1a375e.bindTooltip(
+                `<div>
+                     cluster_10_near_Gwiaździsta_275m -> cluster_23_near_motorway_junction_474m<br>przejazdy: 7<br>mediana czasu: 10.3 min<br>sredni dystans: 9.6 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_925ac3a37b67380e8ec38c320dbfce79 = L.polyline(
+                [[52.307148358208956, 21.080000746268656], [52.21760287101248, 20.865222343966714]],
+                {"bubblingMouseEvents": true, "color": "#ffffccff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffffccff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.654334935824304}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_925ac3a37b67380e8ec38c320dbfce79.bindTooltip(
+                `<div>
+                     cluster_17_near_Głębocka_595m -> cluster_7_near_Warszawa Zachód_137m<br>przejazdy: 7<br>mediana czasu: 11.3 min<br>sredni dystans: 18.2 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_ad4c3d15519ff6b7c2b922bc166ef2e7 = L.polyline(
+                [[52.30764633173843, 21.095601515151515], [52.27808819672131, 20.95902868852459]],
+                {"bubblingMouseEvents": true, "color": "#ffffccff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffffccff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.654334935824304}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_ad4c3d15519ff6b7c2b922bc166ef2e7.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m -> cluster_28_near_Carrefour Express_459m<br>przejazdy: 7<br>mediana czasu: 9.7 min<br>sredni dystans: 10.6 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var poly_line_7bba977557f1fa004a068e636f228c60 = L.polyline(
+                [[52.271567454545455, 20.96448509090909], [52.30764633173843, 21.095601515151515]],
+                {"bubblingMouseEvents": true, "color": "#ffffccff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#ffffccff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.65, "smoothFactor": 1.0, "stroke": true, "weight": 3.654334935824304}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            poly_line_7bba977557f1fa004a068e636f228c60.bindTooltip(
+                `<div>
+                     cluster_24_near_motorway_junction_68m -> cluster_5_near_Marki_299m<br>przejazdy: 7<br>mediana czasu: 7.2 min<br>sredni dystans: 10.2 km
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2d545f7bb075835d57427e096e23df43 = L.circleMarker(
+                [52.21663833333333, 20.86847],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.9459101490553135, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_2d545f7bb075835d57427e096e23df43.bindTooltip(
+                `<div>
+                     boundary_south<br>events: 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f7fdfa501335b9cce5e997592fb823f6 = L.circleMarker(
+                [52.255465703517594, 20.952587412060304],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.988961416889865, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_f7fdfa501335b9cce5e997592fb823f6.bindTooltip(
+                `<div>
+                     cluster_0_near_motorway_junction_71m<br>events: 398
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ee96c2e72a01e1e0324802bf3241a683 = L.circleMarker(
+                [52.269706851385386, 20.998854156171284],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.986452005284438, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_ee96c2e72a01e1e0324802bf3241a683.bindTooltip(
+                `<div>
+                     cluster_1_near_parking_234m<br>events: 397
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_458fc47514a344be350b6d737348a153 = L.circleMarker(
+                [52.2918147751606, 20.973781092077086],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.148468295917647, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_458fc47514a344be350b6d737348a153.bindTooltip(
+                `<div>
+                     cluster_10_near_Gwiaździsta_275m<br>events: 467
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_900d72ae62de4e2ac53ccb63f6d80750 = L.circleMarker(
+                [52.24326697674419, 20.89745581395349],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.7841896339182615, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_900d72ae62de4e2ac53ccb63f6d80750.bindTooltip(
+                `<div>
+                     cluster_11_near_motorway_junction_411m<br>events: 43
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8fd469df3b1532c2d87f870ccda9edd2 = L.circleMarker(
+                [52.28133, 20.991654999999998],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.564949357461536, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_8fd469df3b1532c2d87f870ccda9edd2.bindTooltip(
+                `<div>
+                     cluster_12_near_MOL_483m<br>events: 12
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c3d55fb0571669ee0c0915b678e1e579 = L.circleMarker(
+                [52.29013333333333, 21.001817142857142],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.091042453358316, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_c3d55fb0571669ee0c0915b678e1e579.bindTooltip(
+                `<div>
+                     cluster_13_near_Auchan_459m<br>events: 21
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_41116c46830ab15a3248d1b55b84889f = L.circleMarker(
+                [52.2805872027972, 21.010719510489512],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.969813299576, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_41116c46830ab15a3248d1b55b84889f.bindTooltip(
+                `<div>
+                     cluster_14_near_Orlen_378m<br>events: 143
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_886c0a818f0bffa1340bbcaf8785104d = L.circleMarker(
+                [52.247667222222226, 20.924515],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.94443897916644, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_886c0a818f0bffa1340bbcaf8785104d.bindTooltip(
+                `<div>
+                     cluster_15_near_Delikatesy Centrum_479m<br>events: 18
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81e2b66a7c5dfd07b3b63f8b1f740f96 = L.circleMarker(
+                [52.242484081632654, 20.872746326530613],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.912023005428146, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_81e2b66a7c5dfd07b3b63f8b1f740f96.bindTooltip(
+                `<div>
+                     cluster_16_near_Netto_492m<br>events: 49
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e5fb47e0534d1db1a0d99f9c3dfa65db = L.circleMarker(
+                [52.307148358208956, 21.080000746268656],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.219507705176106, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_e5fb47e0534d1db1a0d99f9c3dfa65db.bindTooltip(
+                `<div>
+                     cluster_17_near_Głębocka_595m<br>events: 67
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_724e23be1282c6aea20b0347ecf7bbe1 = L.circleMarker(
+                [52.2650309375, 20.9696834375],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.49650756146648, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_724e23be1282c6aea20b0347ecf7bbe1.bindTooltip(
+                `<div>
+                     cluster_18_near_plugbox broniewskiego 2ccs 1t2c 2x 150kw_378m<br>events: 32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_948c924266517d0f29958e08b45f3aba = L.circleMarker(
+                [52.2659825, 20.944554444444446],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.610917912644224, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_948c924266517d0f29958e08b45f3aba.bindTooltip(
+                `<div>
+                     cluster_19_near_Megasam Żoliborski_515m<br>events: 36
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0b8c575fbca9b82c50e12daf8ab3769a = L.circleMarker(
+                [52.30488875, 21.0546096875],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.49650756146648, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_0b8c575fbca9b82c50e12daf8ab3769a.bindTooltip(
+                `<div>
+                     cluster_2_near_Głębocka_474m<br>events: 32
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_93bf6d83f01a367a5f84dc5c7bd72a46 = L.circleMarker(
+                [52.2699758974359, 20.952070256410256],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.688879454113936, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_93bf6d83f01a367a5f84dc5c7bd72a46.bindTooltip(
+                `<div>
+                     cluster_20_near_Megasam Żoliborski_168m<br>events: 39
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_680befb72cbc8ae0c17098948c92a66d = L.circleMarker(
+                [52.24628666666667, 20.911366296296297],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.332204510175204, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_680befb72cbc8ae0c17098948c92a66d.bindTooltip(
+                `<div>
+                     cluster_21_near_Bemowo_526m<br>events: 27
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6222fffc3ee3e4f4de2c7b48e7b63530 = L.circleMarker(
+                [52.28486810810811, 21.023166216216218],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.637586159726386, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_6222fffc3ee3e4f4de2c7b48e7b63530.bindTooltip(
+                `<div>
+                     cluster_22_near_Orlen_141m<br>events: 37
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4fee75c86ad57223dc804417e623243e = L.circleMarker(
+                [52.239424375, 20.896751375],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.39444915467244, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_4fee75c86ad57223dc804417e623243e.bindTooltip(
+                `<div>
+                     cluster_23_near_motorway_junction_474m<br>events: 80
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0639b64c85cd9f81f04e098ae6f77c9a = L.circleMarker(
+                [52.271567454545455, 20.96448509090909],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.02535169073515, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_0639b64c85cd9f81f04e098ae6f77c9a.bindTooltip(
+                `<div>
+                     cluster_24_near_motorway_junction_68m<br>events: 55
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6c9ae4a092878cecc3e2826e40832b01 = L.circleMarker(
+                [52.27151309090909, 20.97344818181818],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.02535169073515, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_6c9ae4a092878cecc3e2826e40832b01.bindTooltip(
+                `<div>
+                     cluster_25_near_Marymoncka_468m<br>events: 55
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99c1645be67bd999ffdf41af4c878651 = L.circleMarker(
+                [52.294137222222226, 21.014557222222223],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.94443897916644, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_99c1645be67bd999ffdf41af4c878651.bindTooltip(
+                `<div>
+                     cluster_26_near_Łabiszyńska_378m<br>events: 18
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e22ddf287af62bb543cc53a2b80599a0 = L.circleMarker(
+                [52.30370796, 20.988933959999997],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.525452939131783, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_e22ddf287af62bb543cc53a2b80599a0.bindTooltip(
+                `<div>
+                     cluster_27_near_BP_96m<br>events: 250
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8bfa41a7edc19c85dce7b048fff58c23 = L.circleMarker(
+                [52.27808819672131, 20.95902868852459],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.127134385045093, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_8bfa41a7edc19c85dce7b048fff58c23.bindTooltip(
+                `<div>
+                     cluster_28_near_Carrefour Express_459m<br>events: 61
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7056673636ad800c3fee5fe709a9e9f7 = L.circleMarker(
+                [52.3041015, 21.009051166666666],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.11087386417331, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_7056673636ad800c3fee5fe709a9e9f7.bindTooltip(
+                `<div>
+                     cluster_29_near_parking_207m<br>events: 60
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d38b1a7d237e2cd965e3c434658563ea = L.circleMarker(
+                [52.297974070796464, 21.03151053097345],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.736198448394497, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_d38b1a7d237e2cd965e3c434658563ea.bindTooltip(
+                `<div>
+                     cluster_3_near_Modlińska_248m<br>events: 113
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_99dc08d115b5d1719f55286a293aac0d = L.circleMarker(
+                [52.246640769230765, 20.917007692307696],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.639057329615259, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_99dc08d115b5d1719f55286a293aac0d.bindTooltip(
+                `<div>
+                     cluster_30_near_Circle K_367m<br>events: 13
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b7d8656b454925b723cfc0d7271abe86 = L.circleMarker(
+                [52.31440285714286, 21.067014285714286],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.7080502011022105, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_b7d8656b454925b723cfc0d7271abe86.bindTooltip(
+                `<div>
+                     cluster_31_near_Czerwona Torebka_325m<br>events: 14
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b59197e0cc24c859b93e6ad066c18621 = L.circleMarker(
+                [52.296413333333334, 21.02164],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.9459101490553135, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_b59197e0cc24c859b93e6ad066c18621.bindTooltip(
+                `<div>
+                     cluster_32_near_Łabiszyńska_167m<br>events: 6
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ffcb922fdf34dc3ce0f31d1a89be8d6b = L.circleMarker(
+                [52.24986696969697, 20.898053030303032],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.526360524616162, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_ffcb922fdf34dc3ce0f31d1a89be8d6b.bindTooltip(
+                `<div>
+                     cluster_33_near_parking_50m<br>events: 33
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_afa9a8df0c3ec8ba9e88f0846a0a38cf = L.circleMarker(
+                [52.27997428571428, 20.979413035714288],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.04305126783455, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_afa9a8df0c3ec8ba9e88f0846a0a38cf.bindTooltip(
+                `<div>
+                     cluster_34_near_Modlińska_232m<br>events: 56
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_080fb6fe042f8eb07ab14fe7fa38c0ae = L.circleMarker(
+                [52.29375866666667, 20.999945333333336],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.772588722239782, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_080fb6fe042f8eb07ab14fe7fa38c0ae.bindTooltip(
+                `<div>
+                     cluster_35_near_Auchan_40m<br>events: 15
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c58a52a20f3d1f694051cc4a987b0f55 = L.circleMarker(
+                [52.291470555555556, 21.019077777777778],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.94443897916644, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_c58a52a20f3d1f694051cc4a987b0f55.bindTooltip(
+                `<div>
+                     cluster_36_near_Łabiszyńska_471m<br>events: 18
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_739ff8d67a92a2028fcf575885f0f45e = L.circleMarker(
+                [52.24979444444444, 20.93688888888889],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.332204510175204, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_739ff8d67a92a2028fcf575885f0f45e.bindTooltip(
+                `<div>
+                     cluster_37_near_Lidl_203m<br>events: 27
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_33a54e265005f18d761a20aa2d5a5e43 = L.circleMarker(
+                [52.23945882352941, 20.888491470588235],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.555348061489413, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_33a54e265005f18d761a20aa2d5a5e43.bindTooltip(
+                `<div>
+                     cluster_38_near_Bemowo_282m<br>events: 34
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd6507fc6bf1c12cb69e19cfb285dceb = L.circleMarker(
+                [52.28455375, 20.9884125],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.19722457733622, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_dd6507fc6bf1c12cb69e19cfb285dceb.bindTooltip(
+                `<div>
+                     cluster_39_near_Modlińska_567m<br>events: 8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a3be95db97e01121fb5ff0ee05cecee3 = L.circleMarker(
+                [52.25890859649123, 20.9617501754386],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.060443010546418, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_a3be95db97e01121fb5ff0ee05cecee3.bindTooltip(
+                `<div>
+                     cluster_4_near_Orlen_145m<br>events: 57
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fadfaa590a5826a48c23c0a3995fe0a8 = L.circleMarker(
+                [52.30743125, 21.0668225],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.19722457733622, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_fadfaa590a5826a48c23c0a3995fe0a8.bindTooltip(
+                `<div>
+                     cluster_40_near_Marki_40m<br>events: 8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7e874f20888f6993572a3b6c1dc00e7f = L.circleMarker(
+                [52.307249999999996, 21.07004],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.09861228866811, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_7e874f20888f6993572a3b6c1dc00e7f.bindTooltip(
+                `<div>
+                     cluster_41_near_Marki_255m<br>events: 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_104aecfe80eb82ffb74759b2932aaf74 = L.circleMarker(
+                [52.28737111111111, 20.995404444444446],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.302585092994046, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_104aecfe80eb82ffb74759b2932aaf74.bindTooltip(
+                `<div>
+                     cluster_42_near_Żerań FSO_569m<br>events: 9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a38f834e9a0e96f5c3f1319c132419ad = L.circleMarker(
+                [52.26822366666667, 20.935143999999998],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.433987204485146, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_a38f834e9a0e96f5c3f1319c132419ad.bindTooltip(
+                `<div>
+                     cluster_43_near_BP_264m<br>events: 30
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_70a061d5b28989c131ea746df3bc8bdf = L.circleMarker(
+                [52.283468666666664, 20.956166666666665],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.772588722239782, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_70a061d5b28989c131ea746df3bc8bdf.bindTooltip(
+                `<div>
+                     cluster_44_near_Sam Bielański_488m<br>events: 15
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c75b49aa698caef282d40877449bd7c3 = L.circleMarker(
+                [52.23311, 20.882102727272727],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.484906649788, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_c75b49aa698caef282d40877449bd7c3.bindTooltip(
+                `<div>
+                     cluster_45_near_Bemowo_549m<br>events: 11
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d56f126a7d2821ae1624a47985c56ef3 = L.circleMarker(
+                [52.3068025, 21.06101625],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.19722457733622, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_d56f126a7d2821ae1624a47985c56ef3.bindTooltip(
+                `<div>
+                     cluster_46_near_Marki_364m<br>events: 8
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8fb8083012dd56dde082c3a80f9c3ca5 = L.circleMarker(
+                [52.28547666666666, 20.991533333333333],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.386294361119891, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_8fb8083012dd56dde082c3a80f9c3ca5.bindTooltip(
+                `<div>
+                     cluster_47_near_parking_475m<br>events: 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c817114f33a6154ad39c644e4f91af5a = L.circleMarker(
+                [52.30764633173843, 21.095601515151515],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.442540166468198, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_c817114f33a6154ad39c644e4f91af5a.bindTooltip(
+                `<div>
+                     cluster_5_near_Marki_299m<br>events: 627
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ea64128366ebf92b9f1af72e2d6b0286 = L.circleMarker(
+                [52.246294444444445, 20.89847111111111],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.302585092994046, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_ea64128366ebf92b9f1af72e2d6b0286.bindTooltip(
+                `<div>
+                     cluster_6_near_Bemowo_404m<br>events: 9
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d6f8d45977ebb4b5e5753695626faec2 = L.circleMarker(
+                [52.21760287101248, 20.865222343966714],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.582025138892826, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_d6f8d45977ebb4b5e5753695626faec2.bindTooltip(
+                `<div>
+                     cluster_7_near_Warszawa Zachód_137m<br>events: 721
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8b86ec1523d97097f71908925c67fc71 = L.circleMarker(
+                [52.31039153846154, 21.060716538461538],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.295836866004329, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_8b86ec1523d97097f71908925c67fc71.bindTooltip(
+                `<div>
+                     cluster_8_near_Marki_517m<br>events: 26
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4af96405269dc956752808d4fa142e80 = L.circleMarker(
+                [52.312084210526315, 21.052016842105264],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6.99573227355399, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_4af96405269dc956752808d4fa142e80.bindTooltip(
+                `<div>
+                     cluster_9_near_Pasaż handlowy Derby_580m<br>events: 19
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e283cf11e3d750f15e61bf4f6219a831 = L.circleMarker(
+                [52.29872, 21.02329],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_e283cf11e3d750f15e61bf4f6219a831.bindTooltip(
+                `<div>
+                     poi_Annopol 04<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fd1a55cbacb13976e7422a0fc0a7bc84 = L.circleMarker(
+                [52.24485, 20.90449],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_fd1a55cbacb13976e7422a0fc0a7bc84.bindTooltip(
+                `<div>
+                     poi_Bemowo<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0ee7b9c4673d66ee1608210ac6970972 = L.circleMarker(
+                [52.24184666666667, 20.877506666666665],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.386294361119891, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_0ee7b9c4673d66ee1608210ac6970972.bindTooltip(
+                `<div>
+                     poi_Blizne Jasińskiego 01<br>events: 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b6b9a00d0a1d44a2148070146e330604 = L.circleMarker(
+                [52.240615, 20.8843775],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.6094379124341005, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_b6b9a00d0a1d44a2148070146e330604.bindTooltip(
+                `<div>
+                     poi_Blizne Łaszczyńskiego 02<br>events: 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23b857ffb038530ab51fc76acdcff292 = L.circleMarker(
+                [52.24062, 20.88484],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_23b857ffb038530ab51fc76acdcff292.bindTooltip(
+                `<div>
+                     poi_Blizne Łaszczyńskiego 04<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0367bd07a5f1c268ca67d9593e84bb52 = L.circleMarker(
+                [52.30067, 21.01146],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_0367bd07a5f1c268ca67d9593e84bb52.bindTooltip(
+                `<div>
+                     poi_Chłodnia 02<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_490fe2e93c3afd1b5062c8b31bed8362 = L.circleMarker(
+                [52.31257, 21.06234],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_490fe2e93c3afd1b5062c8b31bed8362.bindTooltip(
+                `<div>
+                     poi_Czerwona Torebka<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7ab31dc9699a851e1afd7a95815dda11 = L.circleMarker(
+                [52.30346, 21.04711],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_7ab31dc9699a851e1afd7a95815dda11.bindTooltip(
+                `<div>
+                     poi_Głębocka<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0e0b27fb8e27f405931ca503432544fe = L.circleMarker(
+                [52.29822, 20.99454],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_0e0b27fb8e27f405931ca503432544fe.bindTooltip(
+                `<div>
+                     poi_Kanał Żerański 01<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ecfaf06542f25eb9bd95adda42598b6d = L.circleMarker(
+                [52.24234, 20.912692],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.7917594692280545, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_ecfaf06542f25eb9bd95adda42598b6d.bindTooltip(
+                `<div>
+                     poi_Kazubów 02<br>events: 5
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_faaab43ddb9d04d1e3c06043be65517a = L.circleMarker(
+                [52.247032499999996, 20.93893],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.6094379124341005, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_faaab43ddb9d04d1e3c06043be65517a.bindTooltip(
+                `<div>
+                     poi_Koło 06<br>events: 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_696e69547e53fe2b71cef7246a92e53c = L.circleMarker(
+                [52.24777333333333, 20.93907666666667],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.386294361119891, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_696e69547e53fe2b71cef7246a92e53c.bindTooltip(
+                `<div>
+                     poi_Koło 07<br>events: 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_22e11d3bdf5d2158a159ba4d8a97cb77 = L.circleMarker(
+                [52.251377500000004, 20.94207],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.6094379124341005, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_22e11d3bdf5d2158a159ba4d8a97cb77.bindTooltip(
+                `<div>
+                     poi_Lidl<br>events: 4
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_32c2f76aeac304c4c999b5d0d62c3547 = L.circleMarker(
+                [52.27192, 20.969359999999998],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.386294361119891, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_32c2f76aeac304c4c999b5d0d62c3547.bindTooltip(
+                `<div>
+                     poi_Metro Marymont 11<br>events: 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_13931b13de63796c11661aaa915e5a70 = L.circleMarker(
+                [52.275545, 20.963395],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.09861228866811, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_13931b13de63796c11661aaa915e5a70.bindTooltip(
+                `<div>
+                     poi_Metro Słodowiec 02<br>events: 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d981c3c9ea8c4d6e9b735afbf440ec70 = L.circleMarker(
+                [52.27516, 20.96415],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_d981c3c9ea8c4d6e9b735afbf440ec70.bindTooltip(
+                `<div>
+                     poi_Metro Słodowiec 06<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ad977e10791abf2ceb8903557bd14d0 = L.circleMarker(
+                [52.274544375, 20.97215671875],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8.174387269895636, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_3ad977e10791abf2ceb8903557bd14d0.bindTooltip(
+                `<div>
+                     poi_OSM object<br>events: 64
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_978265678f2d92be803ac26441a96d21 = L.circleMarker(
+                [52.30648, 21.05195],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_978265678f2d92be803ac26441a96d21.bindTooltip(
+                `<div>
+                     poi_Ostródzka 04<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b4ea1457ba289939a7756d90aca99db2 = L.circleMarker(
+                [52.29277, 21.00989],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_b4ea1457ba289939a7756d90aca99db2.bindTooltip(
+                `<div>
+                     poi_PKP Toruńska 01<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_37c8ec6da532dfec123bfe73b08e4f1c = L.circleMarker(
+                [52.29738666666666, 21.014943333333335],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.386294361119891, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_37c8ec6da532dfec123bfe73b08e4f1c.bindTooltip(
+                `<div>
+                     poi_Partner<br>events: 3
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_96cae519446ed9eead7fbf1a913b3add = L.circleMarker(
+                [52.29589, 21.0138],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_96cae519446ed9eead7fbf1a913b3add.bindTooltip(
+                `<div>
+                     poi_Pelcowizna 02<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3ee09dbf3a2723ec2aacab44c0583416 = L.circleMarker(
+                [52.311955, 21.06559],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.09861228866811, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_3ee09dbf3a2723ec2aacab44c0583416.bindTooltip(
+                `<div>
+                     poi_Podwójna 02<br>events: 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1a8ebdcfd859d5b4e93fdefd8c1ba86b = L.circleMarker(
+                [52.27406, 20.96293],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_1a8ebdcfd859d5b4e93fdefd8c1ba86b.bindTooltip(
+                `<div>
+                     poi_Pop Art Apartments<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1e2485233a5cf8ca5b73b885e4e17cb4 = L.circleMarker(
+                [52.26054, 20.95751],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_1e2485233a5cf8ca5b73b885e4e17cb4.bindTooltip(
+                `<div>
+                     poi_Powązki-Cmentarz Wojskowy 01<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a22dc347d017316fea353435d038e587 = L.circleMarker(
+                [52.21682, 20.86846],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_a22dc347d017316fea353435d038e587.bindTooltip(
+                `<div>
+                     poi_Warszawa Zachód<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_5d1fd53a8315dd8eb23d9dffed6554e0 = L.circleMarker(
+                [52.3078, 21.052065],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.09861228866811, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_5d1fd53a8315dd8eb23d9dffed6554e0.bindTooltip(
+                `<div>
+                     poi_Współczesna 01<br>events: 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9114cf18b22d416de7cba4035458cd4 = L.circleMarker(
+                [52.30948, 21.052145],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5.09861228866811, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_d9114cf18b22d416de7cba4035458cd4.bindTooltip(
+                `<div>
+                     poi_Współczesna 02<br>events: 2
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0d3937bb6384b24af3f559946d4313b2 = L.circleMarker(
+                [52.30903, 21.05379],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_0d3937bb6384b24af3f559946d4313b2.bindTooltip(
+                `<div>
+                     poi_Współczesna 03<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1505c9eafd72859b09a7e14b70e2ef85 = L.circleMarker(
+                [52.30148, 21.04001],
+                {"bubblingMouseEvents": true, "color": "black", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "white", "fillOpacity": 0.9, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 4.693147180559945, "stroke": true, "weight": 3}
+            ).addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+        
+    
+            circle_marker_1505c9eafd72859b09a7e14b70e2ef85.bindTooltip(
+                `<div>
+                     poi_Łabiszyńska<br>events: 1
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+    var color_map_957d55fbec92e7cebe37e8a34da6febc = {};
+
+    
+    color_map_957d55fbec92e7cebe37e8a34da6febc.color = d3.scale.threshold()
+              .domain([7.0, 7.2044088176352705, 7.408817635270541, 7.613226452905812, 7.817635270541082, 8.022044088176353, 8.226452905811623, 8.430861723446894, 8.635270541082164, 8.839679358717435, 9.044088176352705, 9.248496993987976, 9.452905811623246, 9.657314629258517, 9.861723446893787, 10.066132264529058, 10.270541082164328, 10.474949899799599, 10.67935871743487, 10.88376753507014, 11.08817635270541, 11.292585170340681, 11.496993987975952, 11.701402805611222, 11.905811623246493, 12.110220440881765, 12.314629258517034, 12.519038076152306, 12.723446893787575, 12.927855711422847, 13.132264529058116, 13.336673346693388, 13.541082164328657, 13.745490981963929, 13.949899799599198, 14.15430861723447, 14.358717434869739, 14.563126252505011, 14.76753507014028, 14.971943887775552, 15.176352705410821, 15.380761523046091, 15.585170340681362, 15.789579158316633, 15.993987975951903, 16.19839679358717, 16.402805611222444, 16.607214428857716, 16.811623246492985, 17.016032064128254, 17.22044088176353, 17.4248496993988, 17.629258517034067, 17.83366733466934, 18.038076152304612, 18.24248496993988, 18.44689378757515, 18.65130260521042, 18.855711422845694, 19.060120240480963, 19.26452905811623, 19.468937875751504, 19.673346693386776, 19.877755511022045, 20.082164328657313, 20.286573146292586, 20.490981963927858, 20.695390781563127, 20.899799599198396, 21.104208416833668, 21.30861723446894, 21.51302605210421, 21.717434869739478, 21.92184368737475, 22.126252505010022, 22.33066132264529, 22.53507014028056, 22.739478957915832, 22.943887775551104, 23.148296593186373, 23.352705410821642, 23.557114228456914, 23.761523046092183, 23.965931863727455, 24.170340681362724, 24.374749498997996, 24.579158316633265, 24.783567134268537, 24.987975951903806, 25.19238476953908, 25.396793587174347, 25.60120240480962, 25.805611222444888, 26.01002004008016, 26.21442885771543, 26.4188376753507, 26.62324649298597, 26.827655310621243, 27.03206412825651, 27.236472945891784, 27.440881763527056, 27.645290581162325, 27.849699398797597, 28.054108216432866, 28.258517034068138, 28.462925851703407, 28.66733466933868, 28.871743486973948, 29.07615230460922, 29.28056112224449, 29.48496993987976, 29.68937875751503, 29.893787575150302, 30.09819639278557, 30.302605210420843, 30.507014028056112, 30.711422845691384, 30.915831663326653, 31.120240480961925, 31.324649298597194, 31.529058116232466, 31.733466933867735, 31.937875751503007, 32.142284569138276, 32.34669338677355, 32.55110220440882, 32.75551102204409, 32.95991983967936, 33.16432865731463, 33.368737474949896, 33.57314629258517, 33.77755511022044, 33.981963927855716, 34.186372745490985, 34.390781563126254, 34.59519038076152, 34.79959919839679, 35.00400801603206, 35.208416833667336, 35.412825651302605, 35.61723446893788, 35.82164328657315, 36.02605210420842, 36.23046092184369, 36.434869739478955, 36.639278557114224, 36.8436873747495, 37.04809619238477, 37.252505010020045, 37.45691382765531, 37.66132264529058, 37.86573146292585, 38.07014028056112, 38.27454909819639, 38.478957915831664, 38.68336673346693, 38.88777555110221, 39.09218436873748, 39.296593186372746, 39.501002004008015, 39.705410821643284, 39.90981963927856, 40.11422845691383, 40.3186372745491, 40.523046092184366, 40.72745490981964, 40.93186372745491, 41.13627254509018, 41.34068136272545, 41.545090180360724, 41.74949899799599, 41.95390781563126, 42.15831663326653, 42.362725450901806, 42.567134268537075, 42.77154308617234, 42.97595190380761, 43.18036072144289, 43.38476953907816, 43.589178356713425, 43.793587174348694, 43.99799599198397, 44.20240480961924, 44.40681362725451, 44.611222444889776, 44.81563126252505, 45.02004008016032, 45.22444889779559, 45.42885771543086, 45.633266533066134, 45.8376753507014, 46.04208416833667, 46.24649298597194, 46.450901803607216, 46.655310621242485, 46.859719438877754, 47.06412825651302, 47.2685370741483, 47.47294589178357, 47.677354709418836, 47.88176352705411, 48.08617234468938, 48.29058116232465, 48.49498997995992, 48.699398797595194, 48.90380761523046, 49.10821643286573, 49.312625250501, 49.517034068136276, 49.721442885771545, 49.92585170340681, 50.13026052104208, 50.33466933867736, 50.53907815631263, 50.743486973947896, 50.947895791583164, 51.15230460921844, 51.35671342685371, 51.56112224448898, 51.765531062124246, 51.96993987975952, 52.17434869739479, 52.37875751503006, 52.58316633266533, 52.787575150300604, 52.99198396793587, 53.19639278557114, 53.40080160320641, 53.605210420841686, 53.809619238476955, 54.014028056112224, 54.21843687374749, 54.42284569138277, 54.62725450901804, 54.831663326653306, 55.036072144288575, 55.24048096192385, 55.44488977955912, 55.64929859719439, 55.85370741482966, 56.05811623246493, 56.2625250501002, 56.46693386773547, 56.67134268537074, 56.875751503006015, 57.08016032064128, 57.28456913827655, 57.48897795591182, 57.6933867735471, 57.897795591182366, 58.102204408817634, 58.3066132264529, 58.51102204408818, 58.71543086172345, 58.91983967935872, 59.124248496993985, 59.32865731462926, 59.53306613226453, 59.7374749498998, 59.94188376753507, 60.14629258517034, 60.35070140280561, 60.55511022044088, 60.75951903807615, 60.963927855711425, 61.168336673346694, 61.37274549098196, 61.57715430861723, 61.78156312625251, 61.985971943887776, 62.190380761523045, 62.394789579158314, 62.59919839679359, 62.80360721442886, 63.00801603206413, 63.212424849699396, 63.41683366733467, 63.62124248496994, 63.82565130260521, 64.03006012024048, 64.23446893787576, 64.43887775551102, 64.6432865731463, 64.84769539078155, 65.05210420841684, 65.2565130260521, 65.46092184368737, 65.66533066132264, 65.86973947895791, 66.0741482965932, 66.27855711422845, 66.48296593186373, 66.687374749499, 66.89178356713427, 67.09619238476954, 67.3006012024048, 67.50501002004009, 67.70941883767534, 67.91382765531063, 68.11823647294588, 68.32264529058116, 68.52705410821643, 68.7314629258517, 68.93587174348698, 69.14028056112224, 69.34468937875752, 69.54909819639278, 69.75350701402806, 69.95791583166333, 70.1623246492986, 70.36673346693387, 70.57114228456913, 70.77555110220442, 70.97995991983967, 71.18436873747495, 71.38877755511022, 71.59318637274549, 71.79759519038076, 72.00200400801603, 72.2064128256513, 72.41082164328657, 72.61523046092185, 72.81963927855712, 73.02404809619239, 73.22845691382766, 73.43286573146293, 73.6372745490982, 73.84168336673346, 74.04609218436873, 74.25050100200401, 74.45490981963928, 74.65931863727455, 74.86372745490982, 75.06813627254509, 75.27254509018036, 75.47695390781563, 75.6813627254509, 75.88577154308618, 76.09018036072145, 76.29458917835672, 76.49899799599199, 76.70340681362725, 76.90781563126252, 77.11222444889779, 77.31663326653306, 77.52104208416834, 77.72545090180361, 77.92985971943888, 78.13426853707415, 78.33867735470942, 78.54308617234469, 78.74749498997996, 78.95190380761522, 79.15631262525051, 79.36072144288578, 79.56513026052104, 79.76953907815631, 79.97394789579158, 80.17835671342685, 80.38276553106212, 80.58717434869739, 80.79158316633267, 80.99599198396794, 81.20040080160321, 81.40480961923848, 81.60921843687375, 81.81362725450902, 82.01803607214428, 82.22244488977955, 82.42685370741484, 82.6312625250501, 82.83567134268537, 83.04008016032064, 83.24448897795591, 83.44889779559118, 83.65330661322645, 83.85771543086172, 84.062124248497, 84.26653306613227, 84.47094188376754, 84.6753507014028, 84.87975951903807, 85.08416833667334, 85.28857715430861, 85.49298597194388, 85.69739478957916, 85.90180360721443, 86.1062124248497, 86.31062124248497, 86.51503006012024, 86.71943887775551, 86.92384769539078, 87.12825651302605, 87.33266533066133, 87.5370741482966, 87.74148296593187, 87.94589178356713, 88.1503006012024, 88.35470941883767, 88.55911823647294, 88.76352705410822, 88.96793587174349, 89.17234468937876, 89.37675350701403, 89.5811623246493, 89.78557114228457, 89.98997995991984, 90.1943887775551, 90.39879759519039, 90.60320641282566, 90.80761523046093, 91.0120240480962, 91.21643286573146, 91.42084168336673, 91.625250501002, 91.82965931863727, 92.03406813627255, 92.23847695390782, 92.44288577154309, 92.64729458917836, 92.85170340681363, 93.0561122244489, 93.26052104208416, 93.46492985971943, 93.66933867735472, 93.87374749498998, 94.07815631262525, 94.28256513026052, 94.48697394789579, 94.69138276553106, 94.89579158316633, 95.1002004008016, 95.30460921843688, 95.50901803607215, 95.71342685370742, 95.91783567134269, 96.12224448897796, 96.32665330661322, 96.53106212424849, 96.73547094188376, 96.93987975951904, 97.14428857715431, 97.34869739478958, 97.55310621242485, 97.75751503006012, 97.96192384769539, 98.16633266533066, 98.37074148296593, 98.57515030060121, 98.77955911823648, 98.98396793587175, 99.18837675350701, 99.39278557114228, 99.59719438877755, 99.80160320641282, 100.00601202404809, 100.21042084168337, 100.41482965931864, 100.61923847695391, 100.82364729458918, 101.02805611222445, 101.23246492985972, 101.43687374749499, 101.64128256513025, 101.84569138276554, 102.0501002004008, 102.25450901803607, 102.45891783567134, 102.66332665330661, 102.86773547094188, 103.07214428857715, 103.27655310621242, 103.4809619238477, 103.68537074148297, 103.88977955911824, 104.09418837675351, 104.29859719438878, 104.50300601202404, 104.70741482965931, 104.91182364729458, 105.11623246492987, 105.32064128256513, 105.5250501002004, 105.72945891783567, 105.93386773547094, 106.13827655310621, 106.34268537074148, 106.54709418837675, 106.75150300601203, 106.9559118236473, 107.16032064128257, 107.36472945891784, 107.5691382765531, 107.77354709418837, 107.97795591182364, 108.18236472945891, 108.3867735470942, 108.59118236472946, 108.79559118236473, 109.0])
+              .range(['#ffffccff', '#ffffccff', '#ffffcbff', '#fffecbff', '#fffecaff', '#fffdc9ff', '#fffdc9ff', '#fffcc8ff', '#fffcc8ff', '#fffbc7ff', '#fffbc7ff', '#fffac6ff', '#fffac5ff', '#fffac5ff', '#fff9c4ff', '#fff9c4ff', '#fff8c3ff', '#fff8c2ff', '#fff7c2ff', '#fff7c1ff', '#fff6c1ff', '#fff6c0ff', '#fff5c0ff', '#fff5bfff', '#fff4beff', '#fff4beff', '#fff4bdff', '#fff3bdff', '#fff3bcff', '#fff2bbff', '#fff2bbff', '#fff1baff', '#fff1baff', '#fff0b9ff', '#fff0b9ff', '#ffefb8ff', '#ffefb7ff', '#ffefb7ff', '#ffeeb6ff', '#ffeeb6ff', '#ffedb5ff', '#ffedb5ff', '#ffecb4ff', '#ffecb3ff', '#ffebb3ff', '#ffebb2ff', '#ffeab2ff', '#ffeab1ff', '#ffe9b0ff', '#ffe9b0ff', '#ffe9afff', '#ffe8afff', '#ffe8aeff', '#ffe7aeff', '#ffe7adff', '#ffe6acff', '#ffe6acff', '#ffe5abff', '#ffe5abff', '#ffe4aaff', '#ffe4aaff', '#ffe4a9ff', '#ffe3a8ff', '#ffe3a8ff', '#ffe2a7ff', '#ffe2a7ff', '#ffe1a6ff', '#ffe1a5ff', '#ffe0a5ff', '#ffe0a4ff', '#ffdfa4ff', '#ffdfa3ff', '#ffdea3ff', '#ffdea2ff', '#ffdea1ff', '#ffdda1ff', '#ffdda0ff', '#ffdca0ff', '#ffdc9fff', '#ffdb9fff', '#ffdb9eff', '#ffda9dff', '#ffda9dff', '#ffd99cff', '#ffd99cff', '#ffd99bff', '#ffd89aff', '#ffd89aff', '#ffd799ff', '#ffd799ff', '#ffd698ff', '#ffd698ff', '#ffd597ff', '#ffd596ff', '#ffd496ff', '#ffd495ff', '#ffd395ff', '#ffd394ff', '#ffd394ff', '#ffd293ff', '#ffd292ff', '#ffd192ff', '#ffd191ff', '#ffd091ff', '#ffd090ff', '#ffcf8fff', '#ffcf8fff', '#ffce8eff', '#ffce8eff', '#ffce8dff', '#ffcd8dff', '#ffcd8cff', '#ffcc8bff', '#ffcc8bff', '#ffcb8aff', '#ffcb8aff', '#ffca89ff', '#ffca89ff', '#ffc988ff', '#ffc987ff', '#ffc887ff', '#ffc886ff', '#ffc886ff', '#ffc785ff', '#ffc784ff', '#fec684ff', '#fec683ff', '#fec583ff', '#fec582ff', '#fec482ff', '#fec481ff', '#fec380ff', '#fec380ff', '#fec27fff', '#fec27fff', '#fec27eff', '#fec17dff', '#fec17dff', '#fec07cff', '#fec07cff', '#febf7bff', '#febf7bff', '#febe7aff', '#febe79ff', '#febd79ff', '#febd78ff', '#febd78ff', '#febc77ff', '#febc77ff', '#febb76ff', '#febb75ff', '#feba75ff', '#feba74ff', '#feb974ff', '#feb973ff', '#feb872ff', '#feb872ff', '#feb771ff', '#feb771ff', '#feb770ff', '#feb670ff', '#feb66fff', '#feb56eff', '#feb56eff', '#feb46dff', '#feb46dff', '#feb36cff', '#feb36cff', '#feb26bff', '#feb26aff', '#feb26aff', '#feb169ff', '#feb169ff', '#feb068ff', '#feb067ff', '#feaf67ff', '#feaf66ff', '#feae66ff', '#feae65ff', '#fead65ff', '#fead64ff', '#feac63ff', '#feac63ff', '#feac62ff', '#feab62ff', '#feab61ff', '#feaa61ff', '#feaa60ff', '#fea95fff', '#fea95fff', '#fea85eff', '#fea85eff', '#fea75dff', '#fea75cff', '#fea75cff', '#fea65bff', '#fea65bff', '#fea55aff', '#fea55aff', '#fea459ff', '#fea458ff', '#fea358ff', '#fea357ff', '#fea257ff', '#fea256ff', '#fea156ff', '#fea155ff', '#fea154ff', '#fea054ff', '#fea053ff', '#fe9f53ff', '#fe9f52ff', '#fe9e51ff', '#fe9e51ff', '#fe9d50ff', '#fe9d50ff', '#fe9c4fff', '#fe9c4fff', '#fe9c4eff', '#fe9b4dff', '#fe9b4dff', '#fe9a4cff', '#fe9a4cff', '#fe994bff', '#fe994bff', '#fe984aff', '#fe9849ff', '#fe9749ff', '#fe9748ff', '#fe9648ff', '#fe9647ff', '#fe9646ff', '#fe9546ff', '#fe9545ff', '#fe9445ff', '#fe9444ff', '#fe9344ff', '#fe9343ff', '#fe9242ff', '#fe9242ff', '#fe9141ff', '#fe9141ff', '#fe9040ff', '#fe9040ff', '#fe903fff', '#fe8f3eff', '#fe8f3eff', '#fe8e3dff', '#fe8e3dff', '#fd8d3cff', '#fd8d3cff', '#fd8c3cff', '#fc8c3cff', '#fc8b3bff', '#fb8a3bff', '#fb8a3bff', '#fa893bff', '#fa893bff', '#f9883bff', '#f9883bff', '#f8873bff', '#f8873bff', '#f7863bff', '#f7853bff', '#f6853aff', '#f6843aff', '#f5843aff', '#f5833aff', '#f4833aff', '#f4823aff', '#f3813aff', '#f3813aff', '#f2803aff', '#f2803aff', '#f17f3aff', '#f17f39ff', '#f07e39ff', '#f07d39ff', '#ef7d39ff', '#ef7c39ff', '#ee7c39ff', '#ee7b39ff', '#ed7b39ff', '#ed7a39ff', '#ec7939ff', '#ec7939ff', '#eb7839ff', '#eb7838ff', '#ea7738ff', '#ea7738ff', '#e97638ff', '#e97638ff', '#e87538ff', '#e87438ff', '#e77438ff', '#e77338ff', '#e67338ff', '#e67238ff', '#e57237ff', '#e57137ff', '#e47037ff', '#e47037ff', '#e36f37ff', '#e36f37ff', '#e26e37ff', '#e26e37ff', '#e16d37ff', '#e16c37ff', '#e06c37ff', '#e06b36ff', '#df6b36ff', '#df6a36ff', '#de6a36ff', '#de6936ff', '#dd6836ff', '#dd6836ff', '#dc6736ff', '#dc6736ff', '#db6636ff', '#db6636ff', '#da6535ff', '#da6435ff', '#d96435ff', '#d96335ff', '#d86335ff', '#d86235ff', '#d76235ff', '#d76135ff', '#d66135ff', '#d66035ff', '#d55f35ff', '#d55f35ff', '#d45e34ff', '#d35e34ff', '#d35d34ff', '#d25d34ff', '#d25c34ff', '#d15b34ff', '#d15b34ff', '#d05a34ff', '#d05a34ff', '#cf5934ff', '#cf5934ff', '#ce5833ff', '#ce5733ff', '#cd5733ff', '#cd5633ff', '#cc5633ff', '#cc5533ff', '#cb5533ff', '#cb5433ff', '#ca5333ff', '#ca5333ff', '#c95233ff', '#c95232ff', '#c85132ff', '#c85132ff', '#c75032ff', '#c74f32ff', '#c64f32ff', '#c64e32ff', '#c54e32ff', '#c54d32ff', '#c44d32ff', '#c44c32ff', '#c34c32ff', '#c34b31ff', '#c24a31ff', '#c24a31ff', '#c14931ff', '#c14931ff', '#c04831ff', '#c04831ff', '#bf4731ff', '#bf4631ff', '#be4631ff', '#be4531ff', '#bd4530ff', '#bd4430ff', '#bc4430ff', '#bc4330ff', '#bb4230ff', '#bb4230ff', '#ba4130ff', '#ba4130ff', '#b94030ff', '#b94030ff', '#b83f30ff', '#b83e2fff', '#b73e2fff', '#b73d2fff', '#b63d2fff', '#b63c2fff', '#b53c2fff', '#b53b2fff', '#b43b2fff', '#b43a2fff', '#b3392fff', '#b3392fff', '#b2382fff', '#b2382eff', '#b1372eff', '#b1372eff', '#b0362eff', '#b0352eff', '#af352eff', '#af342eff', '#ae342eff', '#ae332eff', '#ad332eff', '#ad322eff', '#ac312dff', '#ac312dff', '#ab302dff', '#ab302dff', '#aa2f2dff', '#aa2f2dff', '#a92e2dff', '#a92d2dff', '#a82d2dff', '#a82c2dff', '#a72c2dff', '#a72b2cff', '#a62b2cff', '#a62a2cff', '#a5292cff', '#a5292cff', '#a4282cff', '#a4282cff', '#a3272cff', '#a3272cff', '#a2262cff', '#a2262cff', '#a1252bff', '#a1242bff', '#a0242bff', '#a0232bff', '#9f232bff', '#9f222bff', '#9e222bff', '#9e212bff', '#9d202bff', '#9d202bff', '#9c1f2bff', '#9c1f2bff', '#9b1e2aff', '#9b1e2aff', '#9a1d2aff', '#9a1c2aff', '#991c2aff', '#991b2aff', '#981b2aff', '#981a2aff', '#971a2aff', '#97192aff', '#96182aff', '#961829ff', '#951729ff', '#951729ff', '#941629ff', '#941629ff', '#931529ff', '#931429ff', '#921429ff', '#921329ff', '#911329ff', '#911229ff', '#901228ff', '#901128ff', '#8f1128ff', '#8f1028ff', '#8e0f28ff', '#8e0f28ff', '#8d0e28ff', '#8d0e28ff', '#8c0d28ff', '#8c0d28ff', '#8b0c28ff', '#8b0b28ff', '#8a0b27ff', '#8a0a27ff', '#890a27ff', '#890927ff', '#880927ff', '#880827ff', '#870727ff', '#870727ff', '#860627ff', '#860627ff', '#850527ff', '#850526ff', '#840426ff', '#840326ff', '#830326ff', '#830226ff', '#820226ff', '#820126ff', '#810126ff', '#810026ff', '#800026ff']);
+    
+
+    color_map_957d55fbec92e7cebe37e8a34da6febc.x = d3.scale.linear()
+              .domain([7.0, 109.0])
+              .range([0, 450 - 50]);
+
+    color_map_957d55fbec92e7cebe37e8a34da6febc.legend = L.control({position: 'topright'});
+    color_map_957d55fbec92e7cebe37e8a34da6febc.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_957d55fbec92e7cebe37e8a34da6febc.legend.addTo(map_57b27d39a5f05cbba31e27e50766dfaa);
+
+    color_map_957d55fbec92e7cebe37e8a34da6febc.xAxis = d3.svg.axis()
+        .scale(color_map_957d55fbec92e7cebe37e8a34da6febc.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([7.0, 58.0, 109.0]);
+
+    color_map_957d55fbec92e7cebe37e8a34da6febc.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_957d55fbec92e7cebe37e8a34da6febc.g = color_map_957d55fbec92e7cebe37e8a34da6febc.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_957d55fbec92e7cebe37e8a34da6febc.g.selectAll("rect")
+        .data(color_map_957d55fbec92e7cebe37e8a34da6febc.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_957d55fbec92e7cebe37e8a34da6febc.x(color_map_957d55fbec92e7cebe37e8a34da6febc.color.domain()[i - 1]) : color_map_957d55fbec92e7cebe37e8a34da6febc.x.range()[0],
+            x1: i < color_map_957d55fbec92e7cebe37e8a34da6febc.color.domain().length ? color_map_957d55fbec92e7cebe37e8a34da6febc.x(color_map_957d55fbec92e7cebe37e8a34da6febc.color.domain()[i]) : color_map_957d55fbec92e7cebe37e8a34da6febc.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_957d55fbec92e7cebe37e8a34da6febc.g.call(color_map_957d55fbec92e7cebe37e8a34da6febc.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("Liczba przejazdow OD");
+</script>
+</html>
