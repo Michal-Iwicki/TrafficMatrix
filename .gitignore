@@ -1,4 +1,16 @@
-.venv
-codes/__pycache__
-.ipynb_checkpoints
-cache
+# Python bytecode cache (matches any __pycache__ directory or .pyc file in the repository)
+**/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+
+# Jupyter Notebook checkpoints
+**/.ipynb_checkpoints/
+
+# Local cache folders
+cache/
+.cache/
