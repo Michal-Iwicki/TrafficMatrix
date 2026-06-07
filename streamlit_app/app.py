@@ -73,6 +73,13 @@ with st.sidebar:
             help="Choose how to normalize the heatmap values."
         )
 
+        region_all = st.radio(
+            "Draw all regions or active only:",
+            options=["all", "active only"],
+            index=1,
+            help="Choose whether recalculate regions to show active only division."
+        )
+
         btn_generate = st.form_submit_button("🚀 Generate / Refresh Dashboard", type="primary", width="stretch")
     
     if btn_generate:
@@ -90,7 +97,11 @@ if st.session_state.generated:
         st.error("Please select at least 3 active terminals in the sidebar to correctly compute Voronoi regions!")
     else:
         with st.spinner("Recalculating Voronoi grid and traffic flows..."):
-            vor_dyn = rebuild_voronoi(active_clusters, cluster_stats, clip_geom)
+            if region_all == "all":
+                vor_endpoints=edited_nodes["endpoint_cluster"].tolist()
+            else:
+                vor_endpoints=active_clusters
+            vor_dyn = rebuild_voronoi(vor_endpoints, cluster_stats, clip_geom)
             flows = get_od_flows(vor_dyn, trip_stats_filtered)
             
             top_flows_df = extract_top_routes(flows, top_n)
@@ -103,7 +114,7 @@ if st.session_state.generated:
             
             with col_map:
                 st.subheader("Voronoi Regions & Top Routes Map")
-                m = plot_dynamic_voronoi(vor_dyn, top_flows_df, term_coords)
+                m = plot_dynamic_voronoi(vor_dyn, top_flows_df, term_coords, active_clusters)
                 # Zamiana parametru dla biblioteki streamlit_folium (zwiększona wysokość)
                 st_folium(m, width="stretch", height=750, returned_objects=[])
                 

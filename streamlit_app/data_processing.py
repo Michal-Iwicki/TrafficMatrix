@@ -1,3 +1,4 @@
+import hdbscan
 import pandas as pd
 import gpd as gpd
 import geopandas as gpd
@@ -7,7 +8,10 @@ from shapely import wkt
 from shapely.affinity import rotate
 from shapely.geometry import Polygon, box
 from sklearn.cluster import DBSCAN
+from sklearn.metrics import pairwise_distances
 from pathlib import Path
+
+# from codes.dbscan_analysis import enforce_min_center_distance
 
 DATA_FILE = Path("data/2024_11_17_17_00_processed.csv")
 SEGMENTS_FILE = Path("data/data_2024-11-17.csv")
@@ -26,7 +30,83 @@ PARAMS = {
     "car_min_max_speed_kmh": 60,
     "voronoi_clip_rotation_deg": 45,
     "voronoi_clip_padding_m": 600,
+    "min_cluster_size": 15,
+    "min_center_dist": 500
 }
+EARTH_R = 6_371_000  # promień Ziemi [m]
+
+def haversine_dist_rad(a, b):
+    """Distance between two points in radians, returns meters."""
+    return np.arccos(
+        np.sin(a[0]) * np.sin(b[0]) +
+        np.cos(a[0]) * np.cos(b[0]) * np.cos(a[1] - b[1])
+    ) * EARTH_R
+
+def compute_cluster_medoids(coords_rad, labels):
+    """Return dict: cluster_id -> medoid coordinate (in radians)."""
+    centers = {}
+    for c in set(labels):
+        if c == -1:
+            continue
+        pts = coords_rad[labels == c]
+        D = pairwise_distances(pts, metric="haversine")
+        medoid_idx = np.argmin(D.mean(axis=1))
+        centers[c] = pts[medoid_idx]
+    return centers
+
+def enforce_min_center_distance(coords_rad, labels, min_center_dist_m, max_iter=10):
+    """
+    Iteratively merge clusters whose medoid centers are closer than min_center_dist_m.
+    Always keeps the larger cluster and relabels the smaller one.
+    Recomputes medoids after each merge.
+    """
+
+    for _ in range(max_iter):
+        centers = compute_cluster_medoids(coords_rad, labels)
+        cluster_ids = list(centers.keys())
+
+        merged_any = False
+
+        # Compare all cluster pairs
+        for i in range(len(cluster_ids)):
+            for j in range(i + 1, len(cluster_ids)):
+                ci = cluster_ids[i]
+                cj = cluster_ids[j]
+
+                # Skip if one of them was merged earlier in this iteration
+                if ci not in centers or cj not in centers:
+                    continue
+
+                d = haversine_dist_rad(centers[ci], centers[cj])
+
+                if d < min_center_dist_m:
+                    # Determine which cluster to keep
+                    size_i = (labels == ci).sum()
+                    size_j = (labels == cj).sum()
+
+                    if size_i >= size_j:
+                        keep, drop = ci, cj
+                    else:
+                        keep, drop = cj, ci
+
+                    # Merge: relabel all points of the smaller cluster
+                    labels[labels == drop] = keep
+
+                    # Remove dropped cluster center
+                    centers.pop(drop, None)
+
+                    merged_any = True
+
+        if not merged_any:
+            break  # convergence
+
+    # ---- Renumber labels to 0..K-1 ----
+    unique = sorted(set(labels[labels != -1]))
+    mapping = {old: new for new, old in enumerate(unique)}
+    mapping[-1] = -1
+    labels = np.array([mapping[l] for l in labels])
+
+    return labels
 
 def haversine_m(lat1, lon1, lat2, lon2):
     radius_m = 6_371_000
@@ -68,6 +148,19 @@ def voronoi_finite_polygons_2d(vor, radius=None):
         angles = np.arctan2(vertices_arr[:, 1] - centroid[1], vertices_arr[:, 0] - centroid[0])
         new_regions.append([v for _, v in sorted(zip(angles, new_region))])
     return new_regions, np.asarray(new_vertices)
+
+
+def find_clusters(coords_rad):
+    clusterer = hdbscan.HDBSCAN(
+        min_cluster_size=PARAMS["min_cluster_size"],
+        metric="haversine",
+    )
+    labels = clusterer.fit_predict(coords_rad)
+
+    # post-processing: enforce minimum center spacing
+    labels = enforce_min_center_distance(coords_rad, labels, PARAMS["min_center_dist"])
+    return labels
+
 
 def load_and_preprocess_data():
     df_raw = pd.read_csv(DATA_FILE, parse_dates=["timestamp", "time"])
@@ -130,10 +223,10 @@ def load_and_preprocess_data():
     end_points["endpoint_type"] = "destination"
     endpoints = pd.concat([start_points, end_points], ignore_index=True).dropna(subset=["lat", "lon"])
 
-    eps_rad = PARAMS["endpoint_cluster_eps_m"] / 6_371_000
+    # eps_rad = PARAMS["endpoint_cluster_eps_m"] / 6_371_000
     coords_rad = np.radians(endpoints[["lat", "lon"]].to_numpy())
-    clusterer = DBSCAN(eps=eps_rad, min_samples=PARAMS["endpoint_cluster_min_samples"], metric="haversine")
-    endpoints["endpoint_cluster"] = clusterer.fit_predict(coords_rad)
+    # clusterer = DBSCAN(eps=eps_rad, min_samples=PARAMS["endpoint_cluster_min_samples"], metric="haversine")
+    endpoints["endpoint_cluster"] = find_clusters(coords_rad)
 
     cluster_stats = endpoints[endpoints["endpoint_cluster"] >= 0].groupby("endpoint_cluster").agg(
         lat=("lat", "mean"), lon=("lon", "mean"), events=("trip_uid", "size"),
@@ -202,8 +295,6 @@ def calculate_od_matrix(flows_df, active_terminal_ids):
     od_matrix = flows_df.pivot_table(index="origin_terminal", columns="destination_terminal", values="trips", aggfunc='sum').fillna(0)
     od_matrix = od_matrix.reindex(index=all_terms, columns=all_terms, fill_value=0)
     return od_matrix
-
-# Dodaj / podmień to na samym dole pliku data_processing.py
 
 def normalize_matrix(od_matrix, method="Row"):
     """Normalizes the OD matrix based on the selected method."""

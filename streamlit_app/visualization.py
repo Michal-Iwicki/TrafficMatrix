@@ -4,7 +4,7 @@ import seaborn as sns
 import branca.colormap as cm
 
 # Funkcja plot_dynamic_voronoi() pozostaje bez zmian
-def plot_dynamic_voronoi(voronoi_dynamic, top_flows, term_coords):
+def plot_dynamic_voronoi(voronoi_dynamic, top_flows, term_coords, active_clusters):
     colormap = cm.LinearColormap(
         ["#440154", "#3b528b", "#21918c", "#5ec962", "#fde725"], 
         vmin=voronoi_dynamic["events"].min(), 
@@ -28,9 +28,12 @@ def plot_dynamic_voronoi(voronoi_dynamic, top_flows, term_coords):
             t1, t2, w = row['term1'], row['term2'], row['trips']
             c1, c2 = (term_coords[t1]['lat'], term_coords[t1]['lon']), (term_coords[t2]['lat'], term_coords[t2]['lon'])
             folium.PolyLine(locations=[c1, c2], color="#ff2a00", weight=2 + 10 * (w / max_trips), opacity=0.6, tooltip=f"{t1} &harr; {t2}: {w} trips").add_to(m)
-            
+
+    # print(active_clusters)
+    # print(voronoi_dynamic)
     for _, row in voronoi_dynamic.iterrows():
-        folium.Marker([row['lat'], row['lon']], icon=folium.DivIcon(html=f'<div style="font-size:11px;font-weight:bold;color:#111;background:#ffd23f;border:1px solid #111;border-radius:50%;width:22px;height:22px;text-align:center;line-height:20px;">{str(row["terminal_id"]).replace("T","")}</div>')).add_to(m)
+        if row['endpoint_cluster'] in active_clusters:
+            folium.Marker([row['lat'], row['lon']], icon=folium.DivIcon(html=f'<div style="font-size:11px;font-weight:bold;color:#111;background:#ffd23f;border:1px solid #111;border-radius:50%;width:22px;height:22px;text-align:center;line-height:20px;">{str(row["terminal_id"]).replace("T","")}</div>')).add_to(m)
     return m
 
 def plot_od_heatmap(od_matrix, norm_method):
