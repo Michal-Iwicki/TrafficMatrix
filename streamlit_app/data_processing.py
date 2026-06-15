@@ -21,8 +21,8 @@ PARAMS = {
     "max_plausible_speed_kmh": 180,
     "stop_speed_kmh": 3,
     "long_stop_s": 3 * 60,
-    "endpoint_cluster_eps_m": 150,
-    "endpoint_cluster_min_samples": 8,
+    "endpoint_cluster_eps_m": 80.5,
+    "endpoint_cluster_min_samples": 12,
     "min_trip_points": 4,
     "min_trip_duration_s": 30,
     "min_trip_distance_m": 200,
@@ -30,7 +30,7 @@ PARAMS = {
     "car_min_max_speed_kmh": 60,
     "voronoi_clip_rotation_deg": 45,
     "voronoi_clip_padding_m": 600,
-    "min_cluster_size": 15,
+    "min_cluster_size": 20,
     "min_center_dist": 500
 }
 EARTH_R = 6_371_000  # promień Ziemi [m]
@@ -159,6 +159,7 @@ def find_clusters(coords_rad):
 
     # post-processing: enforce minimum center spacing
     labels = enforce_min_center_distance(coords_rad, labels, PARAMS["min_center_dist"])
+
     return labels
 
 
@@ -226,7 +227,7 @@ def load_and_preprocess_data():
     # eps_rad = PARAMS["endpoint_cluster_eps_m"] / 6_371_000
     coords_rad = np.radians(endpoints[["lat", "lon"]].to_numpy())
     # clusterer = DBSCAN(eps=eps_rad, min_samples=PARAMS["endpoint_cluster_min_samples"], metric="haversine")
-    endpoints["endpoint_cluster"] = find_clusters(coords_rad)
+    endpoints["endpoint_cluster"] = find_clusters(coords_rad) # clusterer.fit_predict(coords_rad)
 
     cluster_stats = endpoints[endpoints["endpoint_cluster"] >= 0].groupby("endpoint_cluster").agg(
         lat=("lat", "mean"), lon=("lon", "mean"), events=("trip_uid", "size"),
