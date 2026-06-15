@@ -1,10 +1,12 @@
 import folium
+import geopandas as gpd
 import matplotlib.pyplot as plt
+import numpy as np
 import seaborn as sns
 import branca.colormap as cm
 
 # Funkcja plot_dynamic_voronoi() pozostaje bez zmian
-def plot_dynamic_voronoi(voronoi_dynamic, top_flows, term_coords, active_clusters):
+def plot_dynamic_voronoi(voronoi_dynamic, top_flows, term_coords, active_clusters, segments_gdf=None):
     colormap = cm.LinearColormap(
         ["#440154", "#3b528b", "#21918c", "#5ec962", "#fde725"], 
         vmin=voronoi_dynamic["events"].min(), 
@@ -28,6 +30,34 @@ def plot_dynamic_voronoi(voronoi_dynamic, top_flows, term_coords, active_cluster
             t1, t2, w = row['term1'], row['term2'], row['trips']
             c1, c2 = (term_coords[t1]['lat'], term_coords[t1]['lon']), (term_coords[t2]['lat'], term_coords[t2]['lon'])
             folium.PolyLine(locations=[c1, c2], color="#ff2a00", weight=2 + 10 * (w / max_trips), opacity=0.6, tooltip=f"{t1} &harr; {t2}: {w} trips").add_to(m)
+
+    # -------------------------------------------------
+    # Draw road segments (black)
+    # -------------------------------------------------
+    if segments_gdf is not None:
+        for _, row in segments_gdf.iterrows():
+            geom = row.geometry
+
+            if geom.geom_type == "LineString":
+                coords = [(lat, lon) for lon, lat in geom.coords]
+
+                folium.PolyLine(
+                    locations=coords,
+                    color="#555555",
+                    weight=1,
+                    opacity=0.4,
+                ).add_to(m)
+
+            elif geom.geom_type == "MultiLineString":
+                for line in geom.geoms:
+                    coords = [(lat, lon) for lon, lat in line.coords]
+
+                    folium.PolyLine(
+                        locations=coords,
+                        color="black",
+                        weight=1,
+                        opacity=0.4,
+                    ).add_to(m)
 
     # print(active_clusters)
     # print(voronoi_dynamic)
@@ -69,3 +99,50 @@ def plot_od_heatmap(od_matrix, norm_method):
     plt.tight_layout()
     
     return fig
+
+def build_segment_map(
+    segments_gdf: gpd.GeoDataFrame,
+    center=(52.269922, 20.978376),
+    zoom_start: int = 12,
+):
+    """
+    Create a folium map with speed-colored segments.
+    """
+    m = folium.Map(
+        location=list(center),
+        zoom_start=zoom_start,
+        tiles="CartoDB positron",
+    )
+
+    speed_min = float(segments_gdf["median_speed_day"].quantile(0.05))
+    speed_max = float(segments_gdf["median_speed_day"].quantile(0.95))
+
+    colormap = cm.LinearColormap(
+        ["#d73027", "#fee08b", "#1a9850"],
+        vmin=speed_min,
+        vmax=speed_max,
+    )
+    colormap.caption = "Median speed on segments"
+
+    for _, row in segments_gdf.iterrows():
+        geom = row.geometry
+
+        coords = [(lat, lon) for lon, lat in geom.coords]
+
+        speed = float(np.clip(row["median_speed_day"], speed_min, speed_max))
+
+        folium.PolyLine(
+            locations=coords,
+            color=colormap(speed),
+            weight=2,
+            opacity=0.75,
+            tooltip=(
+                f"segment: {row.segment_id}<br>"
+                f"median speed: {row.median_speed_day:.1f}<br>"
+                f"observations: {row.observations}"
+            ),
+        ).add_to(m)
+
+    colormap.add_to(m)
+
+    return m

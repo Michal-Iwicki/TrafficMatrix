@@ -1,12 +1,15 @@
+import pandas as pd
 import streamlit as st
 import matplotlib.pyplot as plt
 from streamlit_folium import st_folium
+from shapely import wkt
+import geopandas as gpd
 
 from data_processing import (
     load_and_preprocess_data, rebuild_voronoi, get_od_flows, 
     extract_top_routes, calculate_od_matrix, normalize_matrix
 )
-from visualization import plot_dynamic_voronoi, plot_od_heatmap
+from visualization import plot_dynamic_voronoi, plot_od_heatmap, build_segment_map
 
 st.set_page_config(page_title="Interactive OD Dashboard", layout="wide")
 
@@ -14,7 +17,33 @@ st.set_page_config(page_title="Interactive OD Dashboard", layout="wide")
 def get_cached_data():
     return load_and_preprocess_data()
 
+@st.cache_data
+def load_segments_gdf(path: str = "data/data_2024-11-17.csv") -> gpd.GeoDataFrame:
+    df = pd.read_csv(path, parse_dates=["time"])
+    df = df.rename(columns={"segmnet_id": "segment_id"})
+
+    segments_daily = (
+        df.groupby(["segment_id", "wkt"], as_index=False)
+        .agg(
+            avg_speed_day=("avg_speed", "mean"),
+            median_speed_day=("avg_speed", "median"),
+            observations=("avg_speed", "size"),
+        )
+    )
+
+    segments_daily["geometry"] = segments_daily["wkt"].apply(wkt.loads)
+
+    gdf = gpd.GeoDataFrame(
+        segments_daily,
+        geometry="geometry",
+        crs="EPSG:4326",
+    )
+
+    return gdf
+
 st.title("🗺️ Interactive OD & Voronoi Dashboard")
+
+segments_gdf = load_segments_gdf()
 
 with st.spinner("Loading and preprocessing data..."):
     try:
@@ -114,10 +143,13 @@ if st.session_state.generated:
             
             with col_map:
                 st.subheader("Voronoi Regions & Top Routes Map")
-                m = plot_dynamic_voronoi(vor_dyn, top_flows_df, term_coords, active_clusters)
+                m = plot_dynamic_voronoi(vor_dyn, top_flows_df, term_coords, active_clusters, segments_gdf)
                 # Zamiana parametru dla biblioteki streamlit_folium (zwiększona wysokość)
-                st_folium(m, width="stretch", height=750, returned_objects=[])
-                
+                st_folium(m, width="stretch", height=750, returned_objects=[],)
+
+                segment_map = build_segment_map(segments_gdf)
+                st_folium(segment_map, width="stretch", height=750, returned_objects=[])
+
             with col_matrix:
                 st.subheader("Origin-Destination Matrix")
                 fig = plot_od_heatmap(od_matrix_disp, norm_method)
