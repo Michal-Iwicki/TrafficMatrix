@@ -5,6 +5,9 @@ from streamlit_folium import st_folium
 from shapely import wkt
 import geopandas as gpd
 
+PRESET_ID = [0, 1, 3, 5, 8, 9, 10, 11, 13, 14, 15, 17, 18, 19, 21, 23, 24, 25, 26, 29, 31]
+DATA_PATH= "data/data_2024-11-17.csv"
+
 from data_processing import (
     load_and_preprocess_data, rebuild_voronoi, get_od_flows, 
     extract_top_routes, calculate_od_matrix, normalize_matrix
@@ -18,7 +21,7 @@ def get_cached_data():
     return load_and_preprocess_data()
 
 @st.cache_data
-def load_segments_gdf(path: str = "data/data_2024-11-17.csv") -> gpd.GeoDataFrame:
+def load_segments_gdf(path: str = DATA_PATH) -> gpd.GeoDataFrame:
     df = pd.read_csv(path, parse_dates=["time"])
     df = df.rename(columns={"segmnet_id": "segment_id"})
 
@@ -41,7 +44,8 @@ def load_segments_gdf(path: str = "data/data_2024-11-17.csv") -> gpd.GeoDataFram
 
     return gdf
 
-st.title("🗺️ Interactive OD & Voronoi Dashboard")
+#st.title("🗺️ Interactive OD & Voronoi Dashboard")
+st.title("🗺️ Interactive Traffic Matrix Generator")
 
 segments_gdf = load_segments_gdf()
 
@@ -54,8 +58,8 @@ with st.spinner("Loading and preprocessing data..."):
 
 if "node_editor_df" not in st.session_state:
     df_nodes = cluster_stats[["endpoint_cluster", "terminal_id", "events"]].copy()
-    half_idx = len(df_nodes) // 2
-    df_nodes["Active"] = [True] * half_idx + [False] * (len(df_nodes) - half_idx)
+    preset_clusters = PRESET_ID
+    df_nodes["Active"] = df_nodes["endpoint_cluster"].isin(preset_clusters)
     st.session_state.node_editor_df = df_nodes
 
 if "generated" not in st.session_state:
@@ -69,12 +73,16 @@ with st.sidebar:
     
     st.markdown("**Terminal Selection (Nodes):**")
     
-    col_sel1, col_sel2 = st.columns(2)
-    if col_sel1.button("✅ Select All", width="stretch"):
+    col_sel1, col_sel2, col_sel3 = st.columns(3)
+    if col_sel1.button("✅ Select All", use_container_width=True):
         st.session_state.node_editor_df["Active"] = True
         st.rerun()
-    if col_sel2.button("❌ Deselect All", width="stretch"):
+    if col_sel2.button("❌ Deselect All", use_container_width=True):
         st.session_state.node_editor_df["Active"] = False
+        st.rerun()
+    if col_sel3.button("🎯 Preset Set", use_container_width=True):
+        preset_clusters = PRESET_ID
+        st.session_state.node_editor_df["Active"] = st.session_state.node_editor_df["endpoint_cluster"].isin(preset_clusters)
         st.rerun()
         
     with st.form("settings_form"):
@@ -87,12 +95,12 @@ with st.sidebar:
                 "endpoint_cluster": None
             },
             hide_index=True,
-            width="stretch"
+            use_container_width=True
         )
         
         top_n = st.slider(
             "Number of top routes (Top N lines):",
-            min_value=1, max_value=50, value=10, step=1
+            min_value=0, max_value=50, value=10, step=1
         )
         
         norm_method = st.radio(
@@ -109,7 +117,7 @@ with st.sidebar:
             help="Choose whether recalculate regions to show active only division."
         )
 
-        btn_generate = st.form_submit_button("🚀 Generate / Refresh Dashboard", type="primary", width="stretch")
+        btn_generate = st.form_submit_button("🚀 Generate / Refresh Dashboard", type="primary", use_container_width=True)
     
     if btn_generate:
         st.session_state.generated = True
@@ -139,59 +147,66 @@ if st.session_state.generated:
             od_matrix = calculate_od_matrix(flows, active_terminal_ids)
             od_matrix_disp = normalize_matrix(od_matrix, norm_method)
             
-            col_map, col_matrix = st.columns([1.2, 1], gap="medium")
-            
-            with col_map:
-                st.subheader("Voronoi Regions & Top Routes Map")
-                m = plot_dynamic_voronoi(vor_dyn, top_flows_df, term_coords, active_clusters, segments_gdf)
-                # Zamiana parametru dla biblioteki streamlit_folium (zwiększona wysokość)
-                st_folium(m, width="stretch", height=750, returned_objects=[],)
+        # --- 1. DWIE MAPY OBOK SIEBIE (GÓRA) ---
+        col_map_vor, col_map_speed = st.columns(2, gap="medium")
+        
+        with col_map_vor:
+            st.subheader("Terminal Zones & Primary Routes")
+            m = plot_dynamic_voronoi(vor_dyn, top_flows_df, term_coords, active_clusters, segments_gdf)
+            st_folium(m, width="stretch", height=600, returned_objects=[])
 
-                segment_map = build_segment_map(segments_gdf)
-                st_folium(segment_map, width="stretch", height=750, returned_objects=[])
+        with col_map_speed:
+            st.subheader("Median Speed map")
+            segment_map = build_segment_map(segments_gdf)
+            st_folium(segment_map, width="stretch", height=600, returned_objects=[])
 
-            with col_matrix:
-                st.subheader("Origin-Destination Matrix")
-                fig = plot_od_heatmap(od_matrix_disp, norm_method)
-                # Zamiana parametru w st.pyplot
-                st.pyplot(fig, width="stretch")
-                plt.close(fig)
-                
-            st.divider()
+        st.divider()
+
+        # --- 2. MACIERZ I TABELA POPULARNYCH DRÓG (ŚRODEK) ---
+        col_matrix, col_table = st.columns([1.2, 1], gap="medium")
+        
+        with col_matrix:
+            st.subheader("Origin-Destination Matrix")
+            fig = plot_od_heatmap(od_matrix_disp, norm_method)
+            st.pyplot(fig, use_container_width=True)
+            plt.close(fig)
             
-            col_list, col_export = st.columns([1, 1])
-            with col_list:
-                st.subheader(f"🏆 Top {top_n} Most Frequent Routes")
-                if not top_flows_df.empty:
-                    st.dataframe(
-                        top_flows_df.rename(columns={'term1': 'Terminal A', 'term2': 'Terminal B', 'trips': 'Number of Trips'}),
-                        hide_index=True,
-                        width="stretch"
-                    )
-                else:
-                    st.info("No route data found for current selection.")
-                    
-            with col_export:
-                st.subheader("📥 Data Export")
-                st.markdown("Download computed data layers reflecting only the currently active terminals.")
-                
-                csv_data = od_matrix.to_csv().encode('utf-8')
-                geojson_data = vor_dyn.to_json().encode('utf-8')
-                
-                st.download_button(
-                    label="📄 Download Raw OD Matrix (CSV)",
-                    data=csv_data,
-                    file_name="od_matrix.csv",
-                    mime="text/csv",
-                    width="stretch"
+        with col_table:
+            st.subheader(f"🏆 Top {top_n} Most Frequent Routes")
+            if not top_flows_df.empty:
+                st.dataframe(
+                    top_flows_df.rename(columns={'term1': 'Terminal A', 'term2': 'Terminal B', 'trips': 'Number of Trips'}),
+                    hide_index=True,
+                    use_container_width=True
                 )
-                
-                st.download_button(
-                    label="🗺️ Download Voronoi Polygons (GeoJSON)",
-                    data=geojson_data,
-                    file_name="voronoi_regions.geojson",
-                    mime="application/json",
-                    width="stretch"
-                )
+            else:
+                st.info("No route data found for current selection.")
+
+        st.divider()
+
+        # --- 3. EKSPORT NA SAMYM DOLE ---
+        st.subheader("📥 Data Export")
+        col_exp1, col_exp2, _ = st.columns([1, 1, 2])
+        
+        csv_data = od_matrix.to_csv().encode('utf-8')
+        geojson_data = vor_dyn.to_json().encode('utf-8')
+        
+        with col_exp1:
+            st.download_button(
+                label="📄 Download Raw OD Matrix (CSV)",
+                data=csv_data,
+                file_name="od_matrix.csv",
+                mime="text/csv",
+                use_container_width=True
+            )
+        with col_exp2:
+            st.download_button(
+                label="🗺️ Download Voronoi Polygons (GeoJSON)",
+                data=geojson_data,
+                file_name="voronoi_regions.geojson",
+                mime="application/json",
+                use_container_width=True
+            )
+
 else:
     st.info("💡 Adjust parameters in the left sidebar and click 'Generate / Refresh Dashboard' to visualize results.")

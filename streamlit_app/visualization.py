@@ -31,33 +31,33 @@ def plot_dynamic_voronoi(voronoi_dynamic, top_flows, term_coords, active_cluster
             c1, c2 = (term_coords[t1]['lat'], term_coords[t1]['lon']), (term_coords[t2]['lat'], term_coords[t2]['lon'])
             folium.PolyLine(locations=[c1, c2], color="#ff2a00", weight=2 + 10 * (w / max_trips), opacity=0.6, tooltip=f"{t1} &harr; {t2}: {w} trips").add_to(m)
 
-    # -------------------------------------------------
-    # Draw road segments (black)
-    # -------------------------------------------------
-    if segments_gdf is not None:
-        for _, row in segments_gdf.iterrows():
-            geom = row.geometry
+    # # -------------------------------------------------
+    # # Draw road segments (black)
+    # # -------------------------------------------------
+    # if segments_gdf is not None:
+    #     for _, row in segments_gdf.iterrows():
+    #         geom = row.geometry
 
-            if geom.geom_type == "LineString":
-                coords = [(lat, lon) for lon, lat in geom.coords]
+    #         if geom.geom_type == "LineString":
+    #             coords = [(lat, lon) for lon, lat in geom.coords]
 
-                folium.PolyLine(
-                    locations=coords,
-                    color="#555555",
-                    weight=1,
-                    opacity=0.4,
-                ).add_to(m)
+    #             folium.PolyLine(
+    #                 locations=coords,
+    #                 color="#555555",
+    #                 weight=1,
+    #                 opacity=0.4,
+    #             ).add_to(m)
 
-            elif geom.geom_type == "MultiLineString":
-                for line in geom.geoms:
-                    coords = [(lat, lon) for lon, lat in line.coords]
+    #         elif geom.geom_type == "MultiLineString":
+    #             for line in geom.geoms:
+    #                 coords = [(lat, lon) for lon, lat in line.coords]
 
-                    folium.PolyLine(
-                        locations=coords,
-                        color="black",
-                        weight=1,
-                        opacity=0.4,
-                    ).add_to(m)
+    #                 folium.PolyLine(
+    #                     locations=coords,
+    #                     color="black",
+    #                     weight=1,
+    #                     opacity=0.4,
+    #                 ).add_to(m)
 
     # print(active_clusters)
     # print(voronoi_dynamic)
