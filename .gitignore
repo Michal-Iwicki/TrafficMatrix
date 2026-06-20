@@ -14,3 +14,5 @@ venv/
 # Local cache folders
 cache/
 .cache/
+
+.idea
